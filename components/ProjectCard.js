@@ -12,12 +12,16 @@ function BrowserFrame({ src, alt, domain, href }) {
           <i className="h-2.5 w-2.5 rounded-full bg-[#febc2e]" />
           <i className="h-2.5 w-2.5 rounded-full bg-[#28c840]" />
         </span>
-        <span className="mx-auto flex max-w-[70%] items-center gap-1.5 bg-[var(--bg)] px-3 py-0.5 text-[11px] tracking-wide text-[var(--muted)]">
-          <svg viewBox="0 0 24 24" width="9" height="9" fill="currentColor" aria-hidden="true">
-            <path d="M12 1a5 5 0 0 0-5 5v3H6a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-9a2 2 0 0 0-2-2h-1V6a5 5 0 0 0-5-5Zm3 8H9V6a3 3 0 1 1 6 0v3Z" />
-          </svg>
-          {domain}
-        </span>
+        {/* No address pill for a project that isn't deployed yet: an empty
+            URL bar reads as broken, where bare chrome just reads as a window. */}
+        {domain && (
+          <span className="mx-auto flex max-w-[70%] items-center gap-1.5 bg-[var(--bg)] px-3 py-0.5 text-[11px] tracking-wide text-[var(--muted)]">
+            <svg viewBox="0 0 24 24" width="9" height="9" fill="currentColor" aria-hidden="true">
+              <path d="M12 1a5 5 0 0 0-5 5v3H6a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-9a2 2 0 0 0-2-2h-1V6a5 5 0 0 0-5-5Zm3 8H9V6a3 3 0 1 1 6 0v3Z" />
+            </svg>
+            {domain}
+          </span>
+        )}
       </div>
       <Image
         src={src}

@@ -39,8 +39,8 @@ const PROJECTS = [
     description:
       "A full-stack e-commerce application: product catalog with brand and category filtering, wishlist, ratings, and a seeded MongoDB backend behind an Express REST API.",
     stack: ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS"],
-    live: null, // TODO: deploy and add URL + preview
-    preview: null,
+    live: null, // TODO: deploy and add the URL
+    preview: "/previews/ecommerce.webp",
     code: "https://github.com/samuel-sarmah/mern-app",
   },
 ];
