@@ -1,0 +1,124 @@
+@import "tailwindcss";
+
+/* Light-only. The page is #F4F4F4 regardless of the visitor's OS theme, so a
+   dark-mode reader sees the same design everyone else does. */
+:root {
+  color-scheme: light;
+  --bg: #f4f4f4;
+  --fg: #101113;
+  --muted: #5c6167;
+  --line: #e0e0e0;
+  --accent: #101113;
+  --card: #ffffff;
+  --chrome: #eaeaea;
+  --ok: #16a34a;
+}
+
+/* Base element styles live in @layer base so Tailwind utility classes
+   (e.g. text-[var(--bg)] on a link) reliably override them. */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--fg);
+    font-family: var(--font-sans), "Helvetica Neue", Helvetica, Arial,
+      sans-serif;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1, h2, h3 {
+    text-wrap: balance;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  ::selection {
+    background: var(--fg);
+    color: var(--bg);
+  }
+}
+
+/* Display serif, used for page and section headlines only. */
+.display {
+  font-family: var(--font-display), "Times New Roman", serif;
+  font-weight: 400;
+  letter-spacing: -0.005em;
+  line-height: 1.06;
+}
+.display em {
+  font-style: italic;
+}
+
+/* Inline text links (no underline; distinguished by weight + hover) */
+.link {
+  color: var(--fg);
+  font-weight: 550;
+  transition: opacity 0.15s ease;
+}
+.link:hover {
+  opacity: 0.6;
+}
+
+/* Small-caps section label. Sections are separated by whitespace, not rules. */
+.section-label {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* Availability pill with a live pulsing dot */
+.status-dot {
+  position: relative;
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 9999px;
+  background: var(--ok);
+}
+.status-dot::after {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  border-radius: 9999px;
+  border: 1.5px solid var(--ok);
+  opacity: 0.6;
+  animation: status-ping 2.2s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+@keyframes status-ping {
+  0%   { transform: scale(0.6); opacity: 0.7; }
+  70%  { transform: scale(1.6); opacity: 0; }
+  100% { transform: scale(1.6); opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .status-dot::after { animation: none; opacity: 0; }
+}
+
+/* Prose (markdown-rendered pages) */
+.prose {
+  color: var(--fg);
+}
+.prose h2 { font-size: 1.25rem; font-weight: 650; margin: 2.25rem 0 0.75rem; letter-spacing: -0.01em; }
+.prose h3 { font-size: 1.05rem; font-weight: 650; margin: 1.75rem 0 0.5rem; }
+.prose p { margin: 1rem 0; }
+.prose a { color: var(--fg); font-weight: 600; }
+.prose a:hover { opacity: 0.6; }
+.prose ul, .prose ol { margin: 1rem 0 1rem 1.4rem; }
+.prose ul { list-style: disc; }
+.prose ol { list-style: decimal; }
+.prose li { margin: 0.35rem 0; }
+.prose blockquote { border-left: 2px solid var(--line); padding-left: 1rem; color: var(--muted); margin: 1.25rem 0; }
+.prose code { font-family: ui-monospace, "Cascadia Code", Menlo, monospace; font-size: 0.88em; background: var(--card); padding: 0.1em 0.35em; }
+.prose pre { background: var(--card); border: 1px solid var(--line); padding: 1rem; overflow-x: auto; margin: 1.25rem 0; }
+.prose pre code { background: none; padding: 0; }
+.prose img { margin: 1.25rem 0; max-width: 100%; }
+.prose hr { border: none; border-top: 1px solid var(--line); margin: 2rem 0; }
