@@ -21,11 +21,11 @@ const sans = Geist({
 });
 
 export const metadata = {
-  title: "Samuel Sarmah · Web Developer",
+  title: "Samuel Ngobi · Web Developer",
   description:
     "I build fast, modern websites, web apps, and SaaS products for businesses and founders with Next.js, React, and Rails. Available for freelance projects and full-time roles.",
   openGraph: {
-    title: "Samuel Sarmah · Web Developer",
+    title: "Samuel Ngobi · Web Developer",
     description:
       "Fast, modern websites, web apps, and SaaS products for businesses and founders, built with Next.js, React, and Rails.",
     type: "website",

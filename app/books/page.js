@@ -1,7 +1,7 @@
 import BookCover from "@/components/BookCover";
 import { BOOK_GROUPS } from "@/lib/books";
 
-export const metadata = { title: "Books · Samuel Sarmah" };
+export const metadata = { title: "Books · Samuel Ngobi" };
 
 export default function Books() {
   return (

@@ -1,7 +1,7 @@
 import { marked } from "marked";
 import { getPage } from "@/lib/content";
 
-export const metadata = { title: "Now · Samuel Sarmah" };
+export const metadata = { title: "Now · Samuel Ngobi" };
 
 export default function Now() {
   const { content } = getPage("now");

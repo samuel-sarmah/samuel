@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { getWritings } from "@/lib/content";
 
-export const metadata = { title: "Writings · Samuel Sarmah" };
+export const metadata = { title: "Writings · Samuel Ngobi" };
 
 export default function Writings() {
   const posts = getWritings();

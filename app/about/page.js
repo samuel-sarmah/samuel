@@ -1,4 +1,4 @@
-export const metadata = { title: "About · Samuel Sarmah" };
+export const metadata = { title: "About · Samuel Ngobi" };
 
 const EMAIL = "sarmah2020samuel@gmail.com";
 

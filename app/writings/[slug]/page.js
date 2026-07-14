@@ -9,7 +9,7 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }) {
   const { slug } = await params;
   const post = getWriting(slug);
-  return { title: post ? `${post.title} · Samuel Sarmah` : "Not found" };
+  return { title: post ? `${post.title} · Samuel Ngobi` : "Not found" };
 }
 
 export default async function Post({ params }) {

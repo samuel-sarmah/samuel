@@ -1,6 +1,6 @@
 import ProjectCard from "@/components/ProjectCard";
 
-export const metadata = { title: "Work · Samuel Sarmah" };
+export const metadata = { title: "Work · Samuel Ngobi" };
 
 const PROJECTS = [
   {
