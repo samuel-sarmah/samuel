@@ -7,10 +7,13 @@ and how to hire me without reading any jargon. Content lives in Markdown files
 and JavaScript modules; there is no database and no CMS.
 
 The layout is a left rail, a persistent sidebar on
-desktop, and a fixed header with a hamburger menu on mobile. Light and dark
-themes follow the visitor's system setting through CSS variables in
-`app/globals.css`. Typography pairs Instrument Serif for headlines with Geist
-for body copy, both self-hosted at build time.
+desktop, and a fixed header with a hamburger menu on mobile. The palette is
+deliberately light only, ink (`#101113`) on paper (`#F4F4F4`), held in CSS
+variables in `app/globals.css`: a visitor whose OS is set to dark mode still
+sees the same design as everyone else. Typography pairs Instrument Serif for
+headlines with Geist for body copy, both self-hosted at build time. The favicon
+in `app/icon.svg` is the Instrument Serif italic "S" as a vector outline, so the
+mark and the headlines share one letterform.
 
 
 
