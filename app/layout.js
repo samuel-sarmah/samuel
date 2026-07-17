@@ -21,6 +21,7 @@ const sans = Geist({
 });
 
 export const metadata = {
+  metadataBase: new URL("https://samuelsarmah.com"),
   title: "Samuel Ngobi · Web Developer",
   description:
     "I build fast, modern websites, web apps, and SaaS products for businesses and founders with Next.js, React, and Rails. Available for freelance projects and full-time roles.",
@@ -29,6 +30,14 @@ export const metadata = {
     description:
       "Fast, modern websites, web apps, and SaaS products for businesses and founders, built with Next.js, React, and Rails.",
     type: "website",
+    url: "/",
+    siteName: "Samuel Ngobi",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Samuel Ngobi · Web Developer",
+    description:
+      "Fast, modern websites, web apps, and SaaS products for businesses and founders, built with Next.js, React, and Rails.",
   },
 };
 
