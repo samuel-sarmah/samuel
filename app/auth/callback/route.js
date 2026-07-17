@@ -10,7 +10,9 @@ export async function GET(request) {
   const code = searchParams.get("code");
   const tokenHash = searchParams.get("token_hash");
   const type = searchParams.get("type");
-  const next = searchParams.get("next") ?? "/writings";
+  const rawNext = searchParams.get("next") ?? "/writings";
+  // Only allow same-site paths so ?next= can't be abused as an open redirect.
+  const next = rawNext.startsWith("/") && !rawNext.startsWith("//") ? rawNext : "/writings";
 
   const supabase = await createClient();
 
