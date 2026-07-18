@@ -11,10 +11,13 @@ export default function Sidebar() {
 
   return (
     <aside className="hidden md:sticky md:top-14 md:block md:h-fit md:w-48 md:shrink-0">
-      <Link href="/" className="block">
-        <span className="text-[16px] font-bold tracking-tight">Samuel Ngobi</span>
-        <span className="block text-[13.5px] text-[var(--muted)]">Fullstack Web Developer</span>
-      </Link>
+      <div className="flex items-start justify-between gap-2">
+        <Link href="/" className="block">
+          <span className="text-[16px] font-bold tracking-tight">Samuel Ngobi</span>
+          <span className="block text-[13.5px] text-[var(--muted)]">Fullstack Web Developer</span>
+        </Link>
+        <ThemeToggle className="-mr-2 mt-0.5" />
+      </div>
 
       <nav className="mt-8 flex flex-col gap-y-2.5">
         {NAV.map((n) => {
@@ -57,11 +60,7 @@ export default function Sidebar() {
         ))}
       </div>
 
-      <div className="mt-8">
-        <ThemeToggle className="-ml-2" />
-      </div>
-
-      <p className="mt-4 text-[13px] text-[var(--muted)]">
+      <p className="mt-8 text-[13px] text-[var(--muted)]">
         © {new Date().getFullYear()} Samuel Ngobi
       </p>
     </aside>

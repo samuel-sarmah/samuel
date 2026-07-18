@@ -47,7 +47,7 @@ const FEATURED = [
     name: "Sterz",
     tagline: "creator marketplace",
     description:
-      "A two-sided marketplace where brands fund campaigns into escrow and creators get paid as verified views land — view counts checked against each platform's API, so neither side has to trust screenshots. Built solo: auth, marketplace flows, and payouts.",
+      "A two-sided marketplace where brands fund campaigns into escrow and creators get paid as verified views land, view counts checked against each platform's API, so neither side has to trust screenshots. Built solo: auth, marketplace flows, and payouts.",
     live: "https://ster-seven.vercel.app",
     preview: "/previews/sterz.webp",
     stack: ["Next.js", "Supabase", "Vercel"],
@@ -57,7 +57,7 @@ const FEATURED = [
 const PROCESS = [
   {
     title: "Scope",
-    body: "You tell me what you need; we settle a fixed scope and timeline over a short call or email thread before any work starts. No vague estimates, no surprise extras.",
+    body: "You tell me what you need; we settle a fixed scope and timeline over a short call or email thread before any work starts.",
   },
   {
     title: "Build",
@@ -65,7 +65,7 @@ const PROCESS = [
   },
   {
     title: "Handoff",
-    body: "You receive the deployed site, the source code, and a CMS you can edit yourself, plus a walkthrough. Nothing is locked behind me.",
+    body: "You receive the deployed site, the source code, and a CMS you can edit yourself, plus a walkthrough.",
   },
 ];
 
@@ -78,7 +78,7 @@ export default function Home() {
           <span className="status-dot" />
           Available for freelance projects &amp; full-time roles
         </p>
-        <h1 className="display mt-6 text-[clamp(2.4rem,6.5vw,3.4rem)]">
+        <h1 className="mt-6 text-[clamp(2.1rem,5.5vw,3rem)] font-bold leading-[1.12] tracking-tight">
           Fast, polished websites and web apps for online businesses.
         </h1>
         <p className="mt-6 max-w-[54ch] text-[17px] text-[var(--muted)]">
@@ -126,7 +126,7 @@ export default function Home() {
 
       {/* How I work */}
       <section className="mt-24">
-        <h2 className="section-label">How I work</h2>
+        <h2 className="section-label">How we work</h2>
         <ol className="mt-8 space-y-8">
           {PROCESS.map((step, i) => (
             <li key={step.title} className="flex gap-5">
@@ -147,7 +147,7 @@ export default function Home() {
       {/* Closing CTA */}
       <section className="mt-24">
         <h2 className="display text-[clamp(1.9rem,4.5vw,2.4rem)]">
-          Need a website shipped or fixed this week?
+          Need a website shipped?
         </h2>
         <p className="mt-4 max-w-[48ch] text-[16px] text-[var(--muted)]">
           Tell me what's blocking you: a build that stalled, a site

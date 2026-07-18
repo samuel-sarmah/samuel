@@ -8,7 +8,7 @@ const EXPERIENCE = [
     role: "Freelance Fullstack Web Developer",
     period: "2+ years · remote",
     points: [
-      "Designed, built, and shipped a marketing site for Fruitland Cyprus, a family citrus farm — including a Sanity CMS handoff so the owners update products and content themselves, no developer on call.",
+      "Designed, built, and shipped a marketing site for Fruitland Cyprus, a family citrus farm including a Sanity CMS handoff so the owners update products and content themselves, no developer on call.",
       "Built Sterz, a two-sided creator marketplace, solo: auth, campaign escrow, payouts, and view counts verified against each platform's API.",
       "Built LaunchTracker, a real-time rocket-launch dashboard with live countdowns, go/no-go status, and news that updates without a page refresh.",
       "Shipped a fullstack MERN e-commerce build: catalog with filtering, wishlist, ratings, and an Express REST API over MongoDB.",
@@ -101,7 +101,7 @@ export default function About() {
             <span key={s.label}>
               {i > 0 && " and "}
               <a href={s.href} target="_blank" rel="noreferrer" className="link">
-                {s.label} ↗
+                {s.label} 
               </a>
             </span>
           ))}
