@@ -8,7 +8,7 @@ export default function Books() {
     <div>
       <h1 className="display text-[clamp(2.2rem,5.5vw,3rem)]">Books</h1>
       <p className="mt-3 text-[var(--muted)]">
-        My reading list on thinking clearly and making better decisions, drawn
+        My reading list is a mix of software and thinking clearly and making better decisions, drawn
         from{" "}
         <a
           href="https://www.rationality.org/resources/reading-list"
