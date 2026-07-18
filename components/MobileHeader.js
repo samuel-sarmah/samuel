@@ -3,7 +3,8 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { EMAIL, NAV, isActive } from "@/lib/nav";
+import { NAV, SOCIALS, isActive } from "@/lib/nav";
+import ThemeToggle from "@/components/ThemeToggle";
 
 // The sidebar is desktop-only, so on mobile navigation lives here: name and
 // role on the left, hamburger on the right, in a header that stays put while
@@ -34,38 +35,47 @@ export default function MobileHeader() {
           </span>
         </Link>
 
-        <button
-          type="button"
-          onClick={() => setOpen((o) => !o)}
-          aria-expanded={open}
-          aria-controls="mobile-nav"
-          aria-label={open ? "Close menu" : "Open menu"}
-          className="-mr-2 flex h-10 w-10 items-center justify-center text-[var(--fg)]"
-        >
-          <svg
-            viewBox="0 0 24 24"
-            width="22"
-            height="22"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="1.75"
-            strokeLinecap="square"
-            aria-hidden="true"
+        <div className="flex items-center gap-1.5">
+          <ThemeToggle />
+          <Link
+            href="/contact"
+            className="bg-[var(--fg)] px-3.5 py-1.5 text-[13.5px] font-medium text-[var(--bg)]"
           >
-            {open ? (
-              <>
-                <path d="M5 5l14 14" />
-                <path d="M19 5L5 19" />
-              </>
-            ) : (
-              <>
-                <path d="M3 6h18" />
-                <path d="M3 12h18" />
-                <path d="M3 18h18" />
-              </>
-            )}
-          </svg>
-        </button>
+            Contact
+          </Link>
+          <button
+            type="button"
+            onClick={() => setOpen((o) => !o)}
+            aria-expanded={open}
+            aria-controls="mobile-nav"
+            aria-label={open ? "Close menu" : "Open menu"}
+            className="-mr-2 flex h-10 w-10 items-center justify-center text-[var(--fg)]"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              width="22"
+              height="22"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.75"
+              strokeLinecap="square"
+              aria-hidden="true"
+            >
+              {open ? (
+                <>
+                  <path d="M5 5l14 14" />
+                  <path d="M19 5L5 19" />
+                </>
+              ) : (
+                <>
+                  <path d="M3 6h18" />
+                  <path d="M3 12h18" />
+                  <path d="M3 18h18" />
+                </>
+              )}
+            </svg>
+          </button>
+        </div>
       </div>
 
       {open && (
@@ -95,14 +105,12 @@ export default function MobileHeader() {
           </ul>
 
           <div className="mt-4 flex gap-6 border-t border-[var(--line)] pt-4 text-[15px] text-[var(--muted)]">
-            <a href={`mailto:${EMAIL}`}>Contact</a>
-            <a
-              href="https://github.com/samuel-sarmah"
-              target="_blank"
-              rel="noreferrer"
-            >
-              GitHub ↗
-            </a>
+            <Link href="/contact">Contact</Link>
+            {SOCIALS.map((s) => (
+              <a key={s.label} href={s.href} target="_blank" rel="noreferrer">
+                {s.label} ↗
+              </a>
+            ))}
           </div>
         </nav>
       )}

@@ -2,7 +2,8 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { EMAIL, NAV, isActive } from "@/lib/nav";
+import { NAV, SOCIALS, isActive } from "@/lib/nav";
+import ThemeToggle from "@/components/ThemeToggle";
 
 // Desktop only. Below md, navigation is handled by MobileHeader.
 export default function Sidebar() {
@@ -35,21 +36,32 @@ export default function Sidebar() {
         })}
       </nav>
 
+      <Link
+        href="/contact"
+        className="mt-8 inline-block bg-[var(--fg)] px-4 py-2 text-[14px] font-medium text-[var(--bg)] transition-opacity hover:opacity-85"
+      >
+        Contact me 
+      </Link>
+
       <div className="mt-8 flex flex-col gap-y-2.5 text-[14px] text-[var(--muted)]">
-        <a href={`mailto:${EMAIL}`} className="transition-colors hover:text-[var(--fg)]">
-          Contact
-        </a>
-        <a
-          href="https://github.com/samuel-sarmah"
-          target="_blank"
-          rel="noreferrer"
-          className="transition-colors hover:text-[var(--fg)]"
-        >
-          GitHub ↗
-        </a>
+        {SOCIALS.map((s) => (
+          <a
+            key={s.label}
+            href={s.href}
+            target="_blank"
+            rel="noreferrer"
+            className="transition-colors hover:text-[var(--fg)]"
+          >
+            {s.label} 
+          </a>
+        ))}
       </div>
 
-      <p className="mt-8 text-[13px] text-[var(--muted)]">
+      <div className="mt-8">
+        <ThemeToggle className="-ml-2" />
+      </div>
+
+      <p className="mt-4 text-[13px] text-[var(--muted)]">
         © {new Date().getFullYear()} Samuel Ngobi
       </p>
     </aside>
