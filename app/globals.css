@@ -1,7 +1,8 @@
 @import "tailwindcss";
 
-/* Light-only. The page is #F4F4F4 regardless of the visitor's OS theme, so a
-   dark-mode reader sees the same design everyone else does. */
+/* Light by default for every visitor; dark is opt-in via the toggle, which
+   stamps data-theme="dark" on <html> (persisted in localStorage, applied
+   before paint by the inline script in layout.js). */
 :root {
   color-scheme: light;
   --bg: #f4f4f4;
@@ -12,6 +13,28 @@
   --card: #ffffff;
   --chrome: #eaeaea;
   --ok: #16a34a;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #131416;
+  --fg: #ececec;
+  --muted: #9ba1a7;
+  --line: #27292c;
+  --accent: #ececec;
+  --card: #1b1d20;
+  --chrome: #222428;
+  --ok: #22c55e;
+  /* Dark absorbs the glow, so it gets a little more presence. */
+  --glow-a: 0.38;
+  --glow-b: 0.16;
+}
+
+/* Warm coral edge glow (R,G,B) framing the viewport. */
+:root {
+  --glow: 224, 96, 62;
+  --glow-a: 0.28;
+  --glow-b: 0.11;
 }
 
 /* Base element styles live in @layer base so Tailwind utility classes
@@ -43,6 +66,19 @@
   ::selection {
     background: var(--fg);
     color: var(--bg);
+  }
+
+  /* Ambient warm glow hugging the viewport edges. Fixed and inert, so it
+     frames every page without touching layout or intercepting clicks. */
+  body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    pointer-events: none;
+    box-shadow:
+      inset 0 0 14px 1px rgba(var(--glow), var(--glow-a)),
+      inset 0 0 52px 6px rgba(var(--glow), var(--glow-b));
   }
 }
 
@@ -101,6 +137,19 @@
 }
 @media (prefers-reduced-motion: reduce) {
   .status-dot::after { animation: none; opacity: 0; }
+}
+
+/* Page-load entrance: the whole main column rises in once. Subtle enough to
+   miss consciously; disabled entirely for reduced-motion readers. */
+@keyframes rise-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: none; }
+}
+main {
+  animation: rise-in 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+@media (prefers-reduced-motion: reduce) {
+  main { animation: none; }
 }
 
 /* Prose (markdown-rendered pages) */

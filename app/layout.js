@@ -43,7 +43,17 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${sans.variable} ${display.variable}`}>
+    <html lang="en" className={`${sans.variable} ${display.variable}`} suppressHydrationWarning>
+      <head>
+        {/* Apply the saved theme before first paint so a dark-mode visitor
+            never sees a light flash. Light is the default; only "dark" is
+            ever stored. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `try{if(localStorage.getItem("theme")==="dark")document.documentElement.dataset.theme="dark"}catch(e){}`,
+          }}
+        />
+      </head>
       <body className="antialiased">
         <MobileHeader />
         <div className="mx-auto flex min-h-screen max-w-[61.6rem] flex-col gap-10 px-5 py-10 sm:px-8 md:flex-row md:gap-14 md:py-14">
