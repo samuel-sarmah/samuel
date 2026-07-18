@@ -2,8 +2,6 @@ import Link from "next/link";
 import ProjectCard from "@/components/ProjectCard";
 import { TechGrid } from "@/components/TechIcon";
 
-const EMAIL = "sarmah2020samuel@gmail.com";
-
 const STACK = [
   {
     label: "Frontend",
@@ -28,10 +26,19 @@ const STACK = [
 
 const FEATURED = [
   {
-    name: "Fruitland Cyprus",
-    tagline: "citrus farm, Cyprus",
+    name: "LaunchTracker",
+    tagline: "live mission dashboard",
     description:
-      "A marketing website for a citrus farm. Product showcase and content the owners update themselves, no code needed.",
+      "A real-time dashboard for rocket launches: live countdowns, go/no-go status, a watchlist, and space-industry news, all updating without a page refresh. Designed and built solo, end to end — the clearest proof of how I handle live data, performance, and polish.",
+    live: "https://launch-status.vercel.app",
+    preview: "/previews/launch-status.webp",
+    stack: ["Next.js", "Vercel"],
+  },
+  {
+    name: "Fruitland Cyprus",
+    tagline: "client work · citrus farm",
+    description:
+      "Marketing site for a family citrus farm in Cyprus. The owners needed a fast site they could update without calling a developer — I owned the whole build, from design through Sanity CMS setup to deployment, so they edit products and content themselves.",
     live: "https://fruitlandcyprus.com",
     preview: "/previews/fruitland.webp",
     stack: ["Next.js", "Tailwind CSS", "Sanity", "Vercel"],
@@ -40,19 +47,25 @@ const FEATURED = [
     name: "Sterz",
     tagline: "creator marketplace",
     description:
-      "A two-sided marketplace connecting content creators with brands, matching paid work to the right people.",
+      "A two-sided marketplace where brands fund campaigns into escrow and creators get paid as verified views land — view counts checked against each platform's API, so neither side has to trust screenshots. Built solo: auth, marketplace flows, and payouts.",
     live: "https://ster-seven.vercel.app",
     preview: "/previews/sterz.webp",
     stack: ["Next.js", "Supabase", "Vercel"],
   },
+];
+
+const PROCESS = [
   {
-    name: "LaunchTracker",
-    tagline: "live mission dashboard",
-    description:
-      "A real-time dashboard for rocket launches: live countdowns, mission status, a watchlist, and aggregated space-industry news.",
-    live: "https://launch-status.vercel.app",
-    preview: "/previews/launch-status.webp",
-    stack: ["Next.js", "Vercel"],
+    title: "Scope",
+    body: "You tell me what you need; we settle a fixed scope and timeline over a short call or email thread before any work starts. No vague estimates, no surprise extras.",
+  },
+  {
+    title: "Build",
+    body: "You watch progress on a live staging link as I build. Feedback goes straight into the next update.",
+  },
+  {
+    title: "Handoff",
+    body: "You receive the deployed site, the source code, and a CMS you can edit yourself, plus a walkthrough. Nothing is locked behind me.",
   },
 ];
 
@@ -66,18 +79,19 @@ export default function Home() {
           Available for freelance projects &amp; full-time roles
         </p>
         <h1 className="display mt-6 text-[clamp(2.4rem,6.5vw,3.4rem)]">
-          Websites, web apps, and SaaS products.
+          Fast, polished websites and web apps for online businesses.
         </h1>
         <p className="mt-6 max-w-[54ch] text-[17px] text-[var(--muted)]">
-          I'm Samuel Ngobi, a fullstack web developer. I turn ideas, into fast, modern software that people trust.
+          I'm Samuel Ngobi, a fullstack web developer. I'm driven by the challenge of turning complex requirements
+          into clean, intuitive digital experiences.
         </p>
         <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 text-[15px]">
-          <a
-            href={`mailto:${EMAIL}`}
+          <Link
+            href="/contact"
             className="bg-[var(--fg)] px-6 py-2.5 font-medium text-[var(--bg)] transition-opacity hover:opacity-85"
           >
             Start a project →
-          </a>
+          </Link>
           <Link href="/work" className="link">
             See my work
           </Link>
@@ -110,22 +124,43 @@ export default function Home() {
         </div>
       </section>
 
+      {/* How I work */}
+      <section className="mt-24">
+        <h2 className="section-label">How I work</h2>
+        <ol className="mt-8 space-y-8">
+          {PROCESS.map((step, i) => (
+            <li key={step.title} className="flex gap-5">
+              <span className="display text-[15px] text-[var(--muted)]">
+                0{i + 1}
+              </span>
+              <div>
+                <h3 className="text-[16px] font-medium">{step.title}</h3>
+                <p className="mt-1.5 max-w-[56ch] text-[15.5px] text-[var(--muted)]">
+                  {step.body}
+                </p>
+              </div>
+            </li>
+          ))}
+        </ol>
+      </section>
+
       {/* Closing CTA */}
       <section className="mt-24">
         <h2 className="display text-[clamp(1.9rem,4.5vw,2.4rem)]">
-          Have something in mind?
+          Need a website shipped or fixed this week?
         </h2>
         <p className="mt-4 max-w-[48ch] text-[16px] text-[var(--muted)]">
-          Tell me what you're trying to build or fix. I read every message
-          and reply within 4 hours.
+          Tell me what's blocking you: a build that stalled, a site
+          that's slow, or an idea that needs to go live. I read every
+          message and reply within 4 hours.
         </p>
         <p className="mt-6">
-          <a
-            href={`mailto:${EMAIL}`}
+          <Link
+            href="/contact"
             className="inline-block bg-[var(--fg)] px-6 py-2.5 text-[15px] font-medium text-[var(--bg)] transition-opacity hover:opacity-85"
           >
-            contact me
-          </a>
+            Let's chat
+          </Link>
         </p>
       </section>
     </div>
