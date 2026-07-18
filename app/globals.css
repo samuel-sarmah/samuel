@@ -25,16 +25,6 @@
   --card: #1b1d20;
   --chrome: #222428;
   --ok: #22c55e;
-  /* Dark absorbs the glow, so it gets a little more presence. */
-  --glow-a: 0.38;
-  --glow-b: 0.16;
-}
-
-/* Warm coral edge glow (R,G,B) framing the viewport. */
-:root {
-  --glow: 224, 96, 62;
-  --glow-a: 0.28;
-  --glow-b: 0.11;
 }
 
 /* Base element styles live in @layer base so Tailwind utility classes
@@ -66,19 +56,6 @@
   ::selection {
     background: var(--fg);
     color: var(--bg);
-  }
-
-  /* Ambient warm glow hugging the viewport edges. Fixed and inert, so it
-     frames every page without touching layout or intercepting clicks. */
-  body::after {
-    content: "";
-    position: fixed;
-    inset: 0;
-    z-index: 100;
-    pointer-events: none;
-    box-shadow:
-      inset 0 0 14px 1px rgba(var(--glow), var(--glow-a)),
-      inset 0 0 52px 6px rgba(var(--glow), var(--glow-b));
   }
 }
 
