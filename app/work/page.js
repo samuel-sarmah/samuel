@@ -1,36 +1,37 @@
+import Link from "next/link";
 import ProjectCard from "@/components/ProjectCard";
 
 export const metadata = { title: "Work · Samuel Ngobi" };
 
 const PROJECTS = [
   {
-    name: "Sterz",
-    tagline: "creator marketplace",
+    name: "LaunchTracker",
+    tagline: "live mission dashboard",
     description:
-      "A two-sided marketplace that connects content creators with brands: campaign budgets are locked in escrow, view counts are verified straight from each platform's API, and creators are paid out as views land.",
-    stack: ["Next.js", "Supabase", "Vercel"],
-    live: "https://ster-seven.vercel.app",
-    preview: "/previews/sterz.webp",
+      "A real-time dashboard for upcoming rocket launches: live countdowns, mission and go/no-go status, a personal watchlist, and aggregated space-industry news, all updating without a page refresh. Designed and built solo, end to end — data fetching, live updates, and UI.",
+    stack: ["Next.js", "Vercel"],
+    live: "https://launch-status.vercel.app",
+    preview: "/previews/launch-status.webp",
     code: null,
   },
   {
     name: "Fruitland Cyprus",
-    tagline: "citrus farm, Cyprus",
+    tagline: "client work · citrus farm, Cyprus",
     description:
-      "A complete marketing website for a citrus farm business. Hero carousel, product showcase, and content managed through Sanity CMS so the owners can update it without touching code.",
+      "A complete marketing website for a family citrus farm. The owners needed a fast site they could update without a developer on call — I owned the whole project: design, build, Sanity CMS setup, and deployment. They now edit products and content themselves, no code needed.",
     stack: ["Next.js", "Tailwind CSS", "Sanity", "Vercel"],
     live: "https://fruitlandcyprus.com",
     preview: "/previews/fruitland.webp",
     code: "https://github.com/samuel-sarmah/fruitland-cyprus",
   },
   {
-    name: "LaunchTracker",
-    tagline: "live mission dashboard",
+    name: "Sterz",
+    tagline: "creator marketplace",
     description:
-      "A real-time dashboard for upcoming rocket launches: live countdowns, mission and go/no-go status, a personal watchlist, and aggregated space-industry news, all updating without a page refresh.",
-    stack: ["Next.js", "Vercel"],
-    live: "https://launch-status.vercel.app",
-    preview: "/previews/launch-status.webp",
+      "A two-sided marketplace that connects content creators with brands: campaign budgets are locked in escrow, view counts are verified straight from each platform's API, and creators are paid out as views land — neither side has to trust screenshots. Built solo: auth, marketplace flows, and payouts.",
+    stack: ["Next.js", "Supabase", "Vercel"],
+    live: "https://ster-seven.vercel.app",
+    preview: "/previews/sterz.webp",
     code: null,
   },
   {
@@ -60,10 +61,10 @@ export default function Work() {
       </div>
 
       <p className="mt-16 text-[var(--muted)]">
-        Want something like this for your product or business?{" "}
-        <a href="/about" className="link">
-          Get in touch
-        </a>
+        Need something like this shipped for your business?{" "}
+        <Link href="/contact" className="link">
+          Tell me what you need
+        </Link>
         .
       </p>
     </div>
