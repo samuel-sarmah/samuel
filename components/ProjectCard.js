@@ -42,9 +42,10 @@ function BrowserFrame({ src, alt, domain, href }) {
   );
 }
 
-export default function ProjectCard({ project }) {
+export default function ProjectCard({ project, headingLevel = 3 }) {
   const { name, tagline, description, stack, live, code, preview } = project;
   const domain = live ? new URL(live).hostname : null;
+  const Heading = headingLevel === 2 ? "h2" : "h3";
 
   return (
     <article>
@@ -63,7 +64,7 @@ export default function ProjectCard({ project }) {
           </p>
         )}
         <div className="mt-1.5 flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
-          <h2 className="text-[19px] font-semibold tracking-tight">{name}</h2>
+          <Heading className="text-[19px] font-semibold tracking-tight">{name}</Heading>
           <span className="flex gap-4 text-[14px] font-medium">
             {live && (
               <a href={live} target="_blank" rel="noreferrer" className="link">
