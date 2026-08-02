@@ -58,7 +58,7 @@ const FEATURED = [
 const PROCESS = [
   {
     title: "Scope",
-    body: "You tell me what you need; we settle a fixed scope and timeline over a short call or email thread before any work starts.",
+    body: "You tell me what you need, we settle a fixed scope and timeline over a short call or email thread before any work starts.",
   },
   {
     title: "Build",
