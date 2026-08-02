@@ -3,7 +3,7 @@
 import { useOptimistic, useTransition } from "react";
 import { toggleLike } from "@/lib/actions";
 
-export default function LikeButton({ slug, count, liked, signedIn }) {
+export default function LikeButton({ slug, count, liked }) {
   const [isPending, startTransition] = useTransition();
   const [optimistic, setOptimistic] = useOptimistic(
     { count, liked },
@@ -14,13 +14,6 @@ export default function LikeButton({ slug, count, liked, signedIn }) {
   );
 
   function onClick() {
-    if (!signedIn) {
-      // Liking requires an account; point the reader at the sign-in prompt.
-      document
-        .getElementById("comments")
-        ?.scrollIntoView({ behavior: "smooth", block: "start" });
-      return;
-    }
     startTransition(async () => {
       setOptimistic();
       await toggleLike(slug);
@@ -32,7 +25,7 @@ export default function LikeButton({ slug, count, liked, signedIn }) {
       type="button"
       onClick={onClick}
       disabled={isPending}
-      title={signedIn ? undefined : "Sign in below to like this post"}
+      aria-pressed={optimistic.liked}
       className={
         "flex items-center gap-x-1.5 text-[13px] transition-colors " +
         (optimistic.liked
