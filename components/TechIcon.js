@@ -92,7 +92,7 @@ export function TechGrid({ groups }) {
     <div className="space-y-9">
       {groups.map((g) => (
         <div key={g.label} className="flex flex-col gap-x-10 gap-y-4 sm:flex-row">
-          <h3 className="w-[9rem] shrink-0 pt-1 text-[12px] font-semibold uppercase tracking-[0.14em] text-[var(--muted)]">
+          <h3 className="w-[9rem] shrink-0 pt-1 text-[12px] font-bold uppercase tracking-[0.14em] text-[var(--muted)]">
             {g.label}
           </h3>
           <ul className="flex flex-1 flex-wrap gap-x-8 gap-y-5">
