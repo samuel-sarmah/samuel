@@ -1,7 +1,9 @@
 import { Instrument_Serif, Geist } from "next/font/google";
 import "./globals.css";
+import Link from "next/link";
 import Sidebar from "@/components/Sidebar";
 import MobileHeader from "@/components/MobileHeader";
+import CookieBanner from "@/components/CookieBanner";
 
 /* Editorial pairing: a high-contrast serif carries the headlines, a clean
    grotesk carries everything you actually have to read. Both self-hosted at
@@ -60,9 +62,13 @@ export default function RootLayout({ children }) {
           <Sidebar />
           <main className="min-w-0 flex-1 md:max-w-[46rem]">{children}</main>
         </div>
-        <footer className="px-5 pb-10 text-[13px] text-[var(--muted)] sm:px-8 md:hidden">
-          © {new Date().getFullYear()} Samuel Ngobi
+        <footer className="flex items-center gap-3 px-5 pb-10 text-[13px] text-[var(--muted)] sm:px-8 md:hidden">
+          <span>© {new Date().getFullYear()} Samuel Ngobi</span>
+          <Link href="/privacy" className="transition-colors hover:text-[var(--fg)]">
+            Privacy
+          </Link>
         </footer>
+        <CookieBanner />
       </body>
     </html>
   );
