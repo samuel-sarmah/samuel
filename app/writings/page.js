@@ -8,8 +8,7 @@ export default function Writings() {
   return (
     <div>
       <h1 className="display text-[clamp(2.2rem,5.5vw,3rem)]">Writings</h1>
-      <p className="mt-4 text-[var(--muted)]">
-        Notes on building for the web: what I&apos;m making, breaking, and
+      <p className="mt-4 text-[var(--muted)]">what I&apos;m making, breaking, and
         learning along the way.
       </p>
       <ul className="mt-10 space-y-8">
