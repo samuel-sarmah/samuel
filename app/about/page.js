@@ -5,13 +5,56 @@ export const metadata = { title: "About · Samuel Ngobi" };
 
 const EXPERIENCE = [
   {
-    role: "Freelance Fullstack Web Developer",
-    period: "2+ years · remote",
+    role: "Full-Stack Developer",
+    company: "FruitlandCyprus",
+    link: "https://fruitlandcyprus.com",
+    period: "Feb 2026 – Present",
     points: [
-      "Designed, built, and shipped a marketing site for Fruitland Cyprus, a family citrus farm including a Sanity CMS handoff so the owners update products and content themselves, no developer on call.",
-      "Built Sterz, a two-sided creator marketplace, solo: auth, campaign escrow, payouts, and view counts verified against each platform's API.",
-      "Built LaunchTracker, a real-time rocket-launch dashboard with live countdowns, go/no-go status, and news that updates without a page refresh.",
-      "Shipped a fullstack MERN e-commerce build: catalog with filtering, wishlist, ratings, and an Express REST API over MongoDB.",
+      "Engineered a high-performance, mobile-responsive web app with Next.js and Tailwind CSS, hitting a 95+ Lighthouse score across devices.",
+      "Cut initial page load time by 48% by optimizing asset delivery for a 40+ image gallery with the Next.js Image component and lazy loading.",
+      "Set up custom domain mapping and automated SSL, giving the client a secure, always-on channel for inquiries.",
+    ],
+  },
+  {
+    role: "Frontend Developer",
+    company: "Space Launch Tracker",
+    link: "https://launch-status.vercel.app",
+    period: "Jan 2026 – Present",
+    points: [
+      "Built a real-time mission-tracking engine in React 19, syncing high-frequency data from global space-agency APIs for sub-second countdown accuracy.",
+      "Turned client feedback into shipped UI features, including a dynamic launch-window slider and a glassmorphic visual redesign.",
+      "Standardized a Git-flow deployment strategy with API versioning, keeping feature delivery fast with zero downtime during active client review.",
+    ],
+  },
+  {
+    role: "Backend Developer",
+    company: "E-Commerce Production Recovery (MERN)",
+    link: "https://github.com/samuel-sarmah/mern-app",
+    period: "Dec 2025 – Feb 2026",
+    points: [
+      "Inherited a failing, undocumented production platform and stabilized it within a tight deadline.",
+      "Hardened security by identifying and patching 7+ critical CVE vulnerabilities in the Node.js runtime, closing high-risk exploits on the customer data pipeline.",
+      "Resolved a total authentication outage by re-architecting broken MongoDB connection logic and Express middleware, restoring checkout and account access.",
+    ],
+  },
+  {
+    role: "Full-Stack Developer",
+    company: "Sterz Creator Marketplace",
+    link: "https://ster-seven.vercel.app",
+    period: "June 2026",
+    points: [
+      "Architected a two-sided creator marketplace from scratch, modeling the full escrow lifecycle across hold, verification, and release states.",
+      "Built a multi-tenant data model with auth isolating brand and creator accounts, mirroring the tenant-separation pattern production commerce platforms rely on.",
+    ],
+  },
+  {
+    role: "Frontend Content Board Member",
+    company: "LogRocket",
+    link: null,
+    period: "Sept 2025 – Mar 2026",
+    points: [
+      "Technical reviewer for a leading industry publication, vetting 12+ deep-dive frontend and backend articles monthly for technical accuracy.",
+      "Gave architectural feedback on 60+ technical guides, upholding quality standards for a global developer audience.",
     ],
   },
 ];
@@ -22,16 +65,13 @@ export default function About() {
       <h1 className="display text-[clamp(2.2rem,5.5vw,3rem)]">About</h1>
       <div className="mt-5 space-y-4 text-[17px]">
         <p>
-          I'm Samuel Ngobi, a web developer with 2+ years of experience. I build websites, web apps,
-          and SaaS products, and I modernize sites and tools that have fallen
-          behind. I work mainly with Next.js, React, Rails, and Tailwind CSS.
+          I'm Samuel Ngobi, a web developer with 2+ years of experience. I work mainly with Next.js, React, Rails, and Tailwind CSS.
         </p>
         <p>
           I care about software that loads fast, works on every
-          device, inclusive with accessibility compliance to WCAG 2.1, and feels trustworthy to the people you want as users, and that
-          you can run without needing a developer on call. You can see the{" "}
-          <a href="/work" className="link">projects I've shipped</a> with live
-          links and source code.
+          device, inclusive with accessibility compliance to WCAG 2.1.
+          I value precision, clear communication, and continuous learning.
+          When I'm not debugging code or managing CI/CD pipelines, I'm analyzing feedback and adjusting my strategies to work smarter and faster.
         </p>
         <p>
           I'm currently available for freelance projects and open to
@@ -45,10 +85,23 @@ export default function About() {
         <h2 className="section-label">Experience</h2>
         <div className="mt-6 space-y-10">
           {EXPERIENCE.map((job) => (
-            <div key={job.role}>
+            <div key={`${job.role}-${job.company}`}>
               <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
                 <h3 className="text-[17px] font-semibold tracking-tight">
                   {job.role}
+                  <span className="font-normal text-[var(--muted)]"> · </span>
+                  {job.link ? (
+                    <a
+                      href={job.link}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="link"
+                    >
+                      {job.company}
+                    </a>
+                  ) : (
+                    job.company
+                  )}
                 </h3>
                 <span className="text-[14px] text-[var(--muted)]">
                   {job.period}
