@@ -60,8 +60,11 @@ export default function Sidebar() {
         ))}
       </div>
 
-      <p className="mt-8 text-[13px] text-[var(--muted)]">
-        © {new Date().getFullYear()} Samuel Ngobi
+      <p className="mt-8 flex items-center gap-3 text-[13px] text-[var(--muted)]">
+        <span>© {new Date().getFullYear()} Samuel Ngobi</span>
+        <Link href="/privacy" className="transition-colors hover:text-[var(--fg)]">
+          Privacy
+        </Link>
       </p>
     </aside>
   );
