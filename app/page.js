@@ -87,10 +87,10 @@ export default function Home() {
         />
         <div aria-hidden="true" className="absolute inset-0 bg-black/55" />
         <div className="relative px-6 py-20 text-white sm:px-9 sm:py-28">         
-          <p className="mt-6 max-w-[46ch] text-[20px] text-white/90">
+          <h1 className="mt-6 max-w-[46ch] text-[20px] font-normal text-white/90">
             I'm Samuel Ngobi(Sarmah), a fullstack web developer driven by the challenge of turning complex requirements
             into clean, intuitive digital experiences.
-          </p>
+          </h1>
           <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 text-[15px]">
             <Link
               href="/contact"
