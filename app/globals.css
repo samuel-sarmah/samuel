@@ -5,13 +5,13 @@
    before paint by the inline script in layout.js). */
 :root {
   color-scheme: light;
-  --bg: #f4f4f4;
+  --bg: #f7ede4;
   --fg: #101113;
   --muted: #5c6167;
-  --line: #e0e0e0;
-  --accent: #101113;
+  --line: #e5dad0;
+  --accent: #7c4a2d;
   --card: #ffffff;
-  --chrome: #eaeaea;
+  --chrome: #eee2d6;
   --ok: #16a34a;
 }
 
