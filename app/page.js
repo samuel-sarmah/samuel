@@ -140,9 +140,6 @@ export default function Home() {
         <ol className="mt-8 space-y-8">
           {PROCESS.map((step, i) => (
             <li key={step.title} className="flex gap-5">
-              <span className="display text-[15px] text-[var(--muted)]">
-                0{i + 1}
-              </span>
               <div>
                 <h3 className="text-[16px] font-medium">{step.title}</h3>
                 <p className="mt-1.5 max-w-[56ch] text-[15.5px] text-[var(--muted)]">
