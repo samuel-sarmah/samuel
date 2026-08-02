@@ -56,7 +56,7 @@ export default function Work() {
       </p>
       <div className="mt-12 space-y-16">
         {PROJECTS.map((p) => (
-          <ProjectCard key={p.name} project={p} />
+          <ProjectCard key={p.name} project={p} headingLevel={2} />
         ))}
       </div>
 
