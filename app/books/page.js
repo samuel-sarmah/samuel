@@ -1,4 +1,5 @@
 import BookCover from "@/components/BookCover";
+import PageHeader from "@/components/PageHeader";
 import { BOOK_GROUPS } from "@/lib/books";
 
 export const metadata = { title: "Books · Samuel Ngobi" };
@@ -6,21 +7,25 @@ export const metadata = { title: "Books · Samuel Ngobi" };
 export default function Books() {
   return (
     <div>
-      <h1 className="display text-[clamp(2.2rem,5.5vw,3rem)]">Books</h1>
-      <p className="mt-3 text-[var(--muted)]">
-        My reading list is a mix of software and thinking clearly and making better decisions, drawn
-        from{" "}
-        <a
-          href="https://www.rationality.org/resources/reading-list"
-          target="_blank"
-          rel="noreferrer"
-          className="link"
-        >
-          CFAR's rationality reading list
-        </a>
-        . These are the books I keep coming back to and recommend most. Each
-        cover links out so you can grab a copy.
-      </p>
+      <PageHeader
+        title="Books"
+        intro={
+          <>
+            My reading list is a mix of software and thinking clearly and making better
+            decisions, drawn from{" "}
+            <a
+              href="https://www.rationality.org/resources/reading-list"
+              target="_blank"
+              rel="noreferrer"
+              className="link"
+            >
+              CFAR's rationality reading list ↗
+            </a>
+            . These are the books I keep coming back to and recommend most. Each cover links
+            out so you can grab a copy.
+          </>
+        }
+      />
 
       <div className="mt-12 space-y-12">
         {BOOK_GROUPS.map((group, i) => (
