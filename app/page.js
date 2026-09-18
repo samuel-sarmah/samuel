@@ -94,7 +94,7 @@ export default function Home() {
           <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 text-[15px]">
             <Link
               href="/contact"
-              className="bg-white px-6 py-2.5 font-medium text-black transition-opacity hover:opacity-85"
+              className="btn btn-inverse"
             >
               Start a project →
             </Link>
@@ -164,7 +164,7 @@ export default function Home() {
         <p className="mt-6">
           <Link
             href="/contact"
-            className="inline-block bg-[var(--fg)] px-6 py-2.5 text-[15px] font-medium text-[var(--bg)] transition-opacity hover:opacity-85"
+            className="btn"
           >
             Let's chat
           </Link>
