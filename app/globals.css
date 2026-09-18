@@ -80,6 +80,34 @@
   opacity: 0.6;
 }
 
+/* Buttons. One primary style everywhere a page asks for an action, so the
+   hero, the closing CTAs, the contact form and the chrome all read as the
+   same control. `.btn-inverse` is for dark photographic backgrounds. */
+.btn {
+  display: inline-block;
+  padding: 0.625rem 1.5rem;
+  background: var(--fg);
+  color: var(--bg);
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.5;
+  transition: opacity 0.15s ease;
+}
+.btn:hover {
+  opacity: 0.85;
+}
+.btn:disabled {
+  opacity: 0.5;
+}
+.btn-inverse {
+  background: #fff;
+  color: #000;
+}
+.btn-sm {
+  padding: 0.5rem 1rem;
+  font-size: 14px;
+}
+
 /* Section heading. Sections are separated by whitespace, not rules. Sized
    and weighted to read as the most prominent heading in its section, clearly
    outranking the subheadings nested under it. */
