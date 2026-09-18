@@ -1,4 +1,4 @@
-import Link from "next/link";
+import ClosingCta from "@/components/ClosingCta";
 import PageHeader from "@/components/PageHeader";
 import ProjectCard from "@/components/ProjectCard";
 
@@ -60,13 +60,11 @@ export default function Work() {
         ))}
       </div>
 
-      <p className="mt-16 text-[var(--muted)]">
-        Need something like this shipped for your business?{" "}
-        <Link href="/contact" className="link">
-          Tell me what you need
-        </Link>
-        .
-      </p>
+      <ClosingCta
+        title="Need something like this?"
+        body="Every project above started as a short message. Tell me what you need shipped, and I'll reply within 4 hours with how I'd approach it."
+        cta="Tell me what you need"
+      />
     </div>
   );
 }
