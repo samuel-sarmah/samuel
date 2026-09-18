@@ -50,11 +50,10 @@ const PROJECTS = [
 export default function Work() {
   return (
     <div>
-      <h1 className="display text-[clamp(2.2rem,5.5vw,3rem)]">Work</h1>
-      <p className="mt-4 max-w-[56ch] text-[16px] text-[var(--muted)]">
-        A few things I&apos;ve built. Every project links to the live site or
-        the source code.
-      </p>
+      <PageHeader
+        title="Work"
+        intro="A few things I've built. Every project links to the live site or the source code."
+      />
       <div className="mt-12 space-y-16">
         {PROJECTS.map((p) => (
           <ProjectCard key={p.name} project={p} headingLevel={2} />
