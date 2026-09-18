@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import ClosingCta from "@/components/ClosingCta";
+import ProcessSteps from "@/components/ProcessSteps";
 import ProjectCard from "@/components/ProjectCard";
 import Section from "@/components/Section";
 import { TechGrid } from "@/components/TechIcon";
@@ -25,21 +26,6 @@ const STACK = [
       "Sanity",
       "Vercel",
     ],
-  },
-];
-
-const PROCESS = [
-  {
-    title: "Scope",
-    body: "You tell me what you need, we settle a fixed scope and timeline over a short call or email thread before any work starts.",
-  },
-  {
-    title: "Build",
-    body: "You watch progress on a live staging link as I build. Feedback goes straight into the next update.",
-  },
-  {
-    title: "Handoff",
-    body: "You receive the deployed site, the source code, and a CMS you can edit yourself, plus a walkthrough.",
   },
 ];
 
@@ -94,16 +80,7 @@ export default function Home() {
       </Section>
 
       <Section title="How we work">
-        <ol className="space-y-8">
-          {PROCESS.map((step) => (
-            <li key={step.title}>
-              <h3 className="text-[16px] font-medium">{step.title}</h3>
-              <p className="mt-1.5 max-w-[56ch] text-[15.5px] text-[var(--muted)]">
-                {step.body}
-              </p>
-            </li>
-          ))}
-        </ol>
+        <ProcessSteps />
       </Section>
 
       <ClosingCta />
