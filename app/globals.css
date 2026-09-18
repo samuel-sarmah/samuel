@@ -187,10 +187,10 @@ main {
 .prose {
   color: var(--fg);
 }
-.prose h2 { font-size: 1.25rem; font-weight: 650; margin: 2.25rem 0 0.75rem; letter-spacing: -0.01em; }
-.prose h3 { font-size: 1.05rem; font-weight: 650; margin: 1.75rem 0 0.5rem; }
+.prose h2 { font-size: 23px; font-weight: 700; margin: 3rem 0 1rem; letter-spacing: -0.01em; }
+.prose h3 { font-size: 17px; font-weight: 600; margin: 1.75rem 0 0.5rem; letter-spacing: -0.01em; }
 .prose p { margin: 1rem 0; }
-.prose a { color: var(--fg); font-weight: 600; }
+.prose a { color: var(--fg); font-weight: 550; transition: opacity 0.15s ease; }
 .prose a:hover { opacity: 0.6; }
 .prose ul, .prose ol { margin: 1rem 0 1rem 1.4rem; }
 .prose ul { list-style: disc; }
