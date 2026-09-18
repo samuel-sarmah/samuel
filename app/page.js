@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import ProjectCard from "@/components/ProjectCard";
+import Section from "@/components/Section";
 import { TechGrid } from "@/components/TechIcon";
 
 const STACK = [
@@ -108,48 +109,30 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Tech stack */}
-      <section className="mt-24">
-        <h2 className="section-label">Tech stack</h2>
-        <div className="mt-8">
-          <TechGrid groups={STACK} />
-        </div>
-      </section>
+      <Section title="Tech stack">
+        <TechGrid groups={STACK} />
+      </Section>
 
-      {/* Selected work */}
-      <section className="mt-24">
-        <div className="flex items-baseline justify-between gap-4">
-          <h2 className="section-label">Selected work</h2>
-          <Link
-            href="/work"
-            className="text-[14px] font-medium text-[var(--muted)] transition-colors hover:text-[var(--fg)]"
-          >
-            All projects →
-          </Link>
-        </div>
-        <div className="mt-10 space-y-16">
+      <Section title="Selected work" action={{ href: "/work", label: "All projects" }}>
+        <div className="space-y-16">
           {FEATURED.map((p) => (
             <ProjectCard key={p.name} project={p} />
           ))}
         </div>
-      </section>
+      </Section>
 
-      {/* How I work */}
-      <section className="mt-24">
-        <h2 className="section-label">How we work</h2>
-        <ol className="mt-8 space-y-8">
-          {PROCESS.map((step, i) => (
-            <li key={step.title} className="flex gap-5">
-              <div>
-                <h3 className="text-[16px] font-medium">{step.title}</h3>
-                <p className="mt-1.5 max-w-[56ch] text-[15.5px] text-[var(--muted)]">
-                  {step.body}
-                </p>
-              </div>
+      <Section title="How we work">
+        <ol className="space-y-8">
+          {PROCESS.map((step) => (
+            <li key={step.title}>
+              <h3 className="text-[16px] font-medium">{step.title}</h3>
+              <p className="mt-1.5 max-w-[56ch] text-[15.5px] text-[var(--muted)]">
+                {step.body}
+              </p>
             </li>
           ))}
         </ol>
-      </section>
+      </Section>
 
       {/* Closing CTA */}
       <section className="mt-24">
