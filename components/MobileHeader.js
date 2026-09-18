@@ -39,7 +39,7 @@ export default function MobileHeader() {
           <ThemeToggle />
           <Link
             href="/contact"
-            className="bg-[var(--fg)] px-3.5 py-1.5 text-[13.5px] font-medium text-[var(--bg)]"
+            className="btn btn-sm py-1.5"
           >
             Contact
           </Link>

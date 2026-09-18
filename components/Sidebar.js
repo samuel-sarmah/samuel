@@ -41,9 +41,9 @@ export default function Sidebar() {
 
       <Link
         href="/contact"
-        className="mt-8 inline-block bg-[var(--fg)] px-4 py-2 text-[14px] font-medium text-[var(--bg)] transition-opacity hover:opacity-85"
+        className="btn btn-sm mt-8"
       >
-        Contact me 
+        Contact me →
       </Link>
 
       <div className="mt-8 flex flex-col gap-y-2.5 text-[14px] text-[var(--muted)]">
@@ -55,7 +55,7 @@ export default function Sidebar() {
             rel="noreferrer"
             className="transition-colors hover:text-[var(--fg)]"
           >
-            {s.label} 
+            {s.label} ↗
           </a>
         ))}
       </div>

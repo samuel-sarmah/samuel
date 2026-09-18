@@ -1,4 +1,6 @@
-import Link from "next/link";
+import ClosingCta from "@/components/ClosingCta";
+import PageHeader from "@/components/PageHeader";
+import Section from "@/components/Section";
 import { SOCIALS } from "@/lib/nav";
 
 export const metadata = { title: "About · Samuel Ngobi" };
@@ -62,7 +64,7 @@ const EXPERIENCE = [
 export default function About() {
   return (
     <div>
-      <h1 className="display text-[clamp(2.2rem,5.5vw,3rem)]">About</h1>
+      <PageHeader title="About" />
       <div className="mt-5 space-y-4 text-[17px]">
         <p>
           I'm Samuel Ngobi, a web developer with 2+ years of experience. I work mainly with Next.js, React, Rails, and Tailwind CSS.
@@ -81,13 +83,12 @@ export default function About() {
         </p>
       </div>
 
-      <div className="mt-14">
-        <h2 className="section-label">Experience</h2>
-        <div className="mt-6 space-y-10">
+      <Section title="Experience">
+        <div className="space-y-10">
           {EXPERIENCE.map((job) => (
             <div key={`${job.role}-${job.company}`}>
               <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
-                <h3 className="text-[17px] font-semibold tracking-tight">
+                <h3 className="item-title">
                   {job.role}
                   <span className="font-normal text-[var(--muted)]"> · </span>
                   {job.link ? (
@@ -124,43 +125,34 @@ export default function About() {
             </div>
           ))}
         </div>
-      </div>
+      </Section>
 
-      <div className="mt-14">
-        <h2 className="section-label">Education</h2>
-        <div className="mt-6">
-          <h3 className="text-[17px] font-semibold tracking-tight">
-            Information Security Studies
-          </h3>
-          <p className="mt-1 text-[15.5px] text-[var(--muted)]">
-            European University of Lefke, Cyprus
-          </p>
-        </div>
-      </div>
-
-      <div className="mt-14">
-        <p className="section-label">Get in touch</p>
-        <p className="mt-4">
-          <Link
-            href="/contact"
-            className="inline-block bg-[var(--fg)] px-6 py-2.5 text-[15px] font-medium text-[var(--bg)] transition-opacity hover:opacity-85"
-          >
-            Contact me →
-          </Link>
+      <Section title="Education">
+        <h3 className="item-title">
+          Information Security Studies
+        </h3>
+        <p className="mt-1 text-[15.5px] text-[var(--muted)]">
+          European University of Lefke, Cyprus
         </p>
+      </Section>
+
+      <ClosingCta
+        title="Let's work together"
+        body="I'm available for freelance projects and open to full-time roles. Tell me about yours and I'll reply within 4 hours."
+        cta="Contact me"
+      >
         <p className="mt-5 text-[14px] text-[var(--muted)]">
           Also on{" "}
           {SOCIALS.map((s, i) => (
             <span key={s.label}>
               {i > 0 && " and "}
               <a href={s.href} target="_blank" rel="noreferrer" className="link">
-                {s.label} 
+                {s.label} ↗
               </a>
             </span>
           ))}
-          {/* TODO: add LinkedIn link here when ready */}
         </p>
-      </div>
+      </ClosingCta>
     </div>
   );
 }

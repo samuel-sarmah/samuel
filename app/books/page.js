@@ -1,4 +1,6 @@
 import BookCover from "@/components/BookCover";
+import ClosingCta from "@/components/ClosingCta";
+import PageHeader from "@/components/PageHeader";
 import { BOOK_GROUPS } from "@/lib/books";
 
 export const metadata = { title: "Books · Samuel Ngobi" };
@@ -6,21 +8,25 @@ export const metadata = { title: "Books · Samuel Ngobi" };
 export default function Books() {
   return (
     <div>
-      <h1 className="display text-[clamp(2.2rem,5.5vw,3rem)]">Books</h1>
-      <p className="mt-3 text-[var(--muted)]">
-        My reading list is a mix of software and thinking clearly and making better decisions, drawn
-        from{" "}
-        <a
-          href="https://www.rationality.org/resources/reading-list"
-          target="_blank"
-          rel="noreferrer"
-          className="link"
-        >
-          CFAR's rationality reading list
-        </a>
-        . These are the books I keep coming back to and recommend most. Each
-        cover links out so you can grab a copy.
-      </p>
+      <PageHeader
+        title="Books"
+        intro={
+          <>
+            My reading list is a mix of software and thinking clearly and making better
+            decisions, drawn from{" "}
+            <a
+              href="https://www.rationality.org/resources/reading-list"
+              target="_blank"
+              rel="noreferrer"
+              className="link"
+            >
+              CFAR's rationality reading list ↗
+            </a>
+            . These are the books I keep coming back to and recommend most. Each cover links
+            out so you can grab a copy.
+          </>
+        }
+      />
 
       <div className="mt-12 space-y-12">
         {BOOK_GROUPS.map((group, i) => (
@@ -38,7 +44,7 @@ export default function Books() {
                     <BookCover slug={b.slug} title={b.title} />
                   </a>
                   <div className="min-w-0 flex-1">
-                    <h3 className="text-[17px] font-semibold leading-snug">
+                    <h3 className="item-title">
                       <a href={b.url} target="_blank" rel="noreferrer" className="hover:opacity-70">
                         {b.title}
                       </a>
@@ -56,6 +62,12 @@ export default function Books() {
           </section>
         ))}
       </div>
+
+      <ClosingCta
+        title="Building something?"
+        body="Reading is how I think; shipping is what I do. If you have a project that needs a developer, tell me about it and I'll reply within 4 hours."
+        cta="Start a project"
+      />
     </div>
   );
 }

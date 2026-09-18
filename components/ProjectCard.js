@@ -59,7 +59,7 @@ export default function ProjectCard({ project, headingLevel = 3 }) {
       )}
       <div className={preview ? "mt-5" : ""}>
         {tagline && (
-          <p className="text-[11.5px] font-semibold uppercase tracking-[0.14em] text-[var(--muted)]">
+          <p className="eyebrow">
             {tagline}
           </p>
         )}

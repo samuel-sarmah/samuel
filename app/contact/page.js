@@ -1,4 +1,7 @@
 import ContactForm from "@/components/ContactForm";
+import PageHeader from "@/components/PageHeader";
+import ProcessSteps from "@/components/ProcessSteps";
+import Section from "@/components/Section";
 import { EMAIL } from "@/lib/nav";
 
 export const metadata = { title: "Contact · Samuel Ngobi" };
@@ -6,12 +9,10 @@ export const metadata = { title: "Contact · Samuel Ngobi" };
 export default function Contact() {
   return (
     <div>
-      <h1 className="display text-[clamp(2.2rem,5.5vw,3rem)]">Contact</h1>
-      <p className="mt-4 max-w-[54ch] text-[16px] text-[var(--muted)]">
-        Tell me what you&apos;re building or what&apos;s broken — a stalled
-        build, a slow site, or an idea that needs to go live. I read every
-        message and reply within 4 hours.
-      </p>
+      <PageHeader
+        title="Contact"
+        intro="Tell me what you're building or what's broken: a stalled build, a slow site, or an idea that needs to go live. I read every message and reply within 4 hours."
+      />
 
       <div className="mt-10 max-w-[36rem]">
         <ContactForm />
@@ -23,6 +24,10 @@ export default function Contact() {
           {EMAIL}
         </a>
       </p>
+
+      <Section title="What happens next">
+        <ProcessSteps />
+      </Section>
     </div>
   );
 }

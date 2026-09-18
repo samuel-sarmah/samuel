@@ -57,6 +57,12 @@
     background: var(--fg);
     color: var(--bg);
   }
+
+  /* One keyboard-focus treatment for every link, button and field. */
+  :focus-visible {
+    outline: 2px solid var(--fg);
+    outline-offset: 3px;
+  }
 }
 
 /* Display serif, used for page and section headlines only. */
@@ -80,6 +86,44 @@
   opacity: 0.6;
 }
 
+/* Buttons. One primary style everywhere a page asks for an action, so the
+   hero, the closing CTAs, the contact form and the chrome all read as the
+   same control. `.btn-inverse` is for dark photographic backgrounds. */
+.btn {
+  display: inline-block;
+  padding: 0.625rem 1.5rem;
+  background: var(--fg);
+  color: var(--bg);
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.5;
+  transition: opacity 0.15s ease;
+}
+.btn:hover {
+  opacity: 0.85;
+}
+.btn:disabled {
+  opacity: 0.5;
+}
+.btn-inverse {
+  background: #fff;
+  color: #000;
+}
+.btn-sm {
+  padding: 0.5rem 1rem;
+  font-size: 14px;
+}
+
+/* Eyebrow: the small uppercase label above a card title or beside a group
+   of items (project taglines, tech-stack group names). */
+.eyebrow {
+  font-size: 11.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--muted);
+}
+
 /* Section heading. Sections are separated by whitespace, not rules. Sized
    and weighted to read as the most prominent heading in its section, clearly
    outranking the subheadings nested under it. */
@@ -88,6 +132,15 @@
   font-weight: 700;
   letter-spacing: -0.01em;
   color: var(--fg);
+}
+
+/* Item title: the heading of one entry inside a section (a job, a book, a
+   process step). Sits one step below .section-label. */
+.item-title {
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.35;
 }
 
 /* Availability pill with a live pulsing dot */
@@ -134,10 +187,10 @@ main {
 .prose {
   color: var(--fg);
 }
-.prose h2 { font-size: 1.25rem; font-weight: 650; margin: 2.25rem 0 0.75rem; letter-spacing: -0.01em; }
-.prose h3 { font-size: 1.05rem; font-weight: 650; margin: 1.75rem 0 0.5rem; }
+.prose h2 { font-size: 23px; font-weight: 700; margin: 3rem 0 1rem; letter-spacing: -0.01em; }
+.prose h3 { font-size: 17px; font-weight: 600; margin: 1.75rem 0 0.5rem; letter-spacing: -0.01em; }
 .prose p { margin: 1rem 0; }
-.prose a { color: var(--fg); font-weight: 600; }
+.prose a { color: var(--fg); font-weight: 550; transition: opacity 0.15s ease; }
 .prose a:hover { opacity: 0.6; }
 .prose ul, .prose ol { margin: 1rem 0 1rem 1.4rem; }
 .prose ul { list-style: disc; }
