@@ -1,4 +1,4 @@
-import Link from "next/link";
+import ClosingCta from "@/components/ClosingCta";
 import PageHeader from "@/components/PageHeader";
 import Section from "@/components/Section";
 import { SOCIALS } from "@/lib/nav";
@@ -136,29 +136,23 @@ export default function About() {
         </p>
       </Section>
 
-      <div className="mt-14">
-        <p className="section-label">Get in touch</p>
-        <p className="mt-4">
-          <Link
-            href="/contact"
-            className="btn"
-          >
-            Contact me →
-          </Link>
-        </p>
+      <ClosingCta
+        title="Let's work together"
+        body="I'm available for freelance projects and open to full-time roles. Tell me about yours and I'll reply within 4 hours."
+        cta="Contact me"
+      >
         <p className="mt-5 text-[14px] text-[var(--muted)]">
           Also on{" "}
           {SOCIALS.map((s, i) => (
             <span key={s.label}>
               {i > 0 && " and "}
               <a href={s.href} target="_blank" rel="noreferrer" className="link">
-                {s.label} 
+                {s.label} ↗
               </a>
             </span>
           ))}
-          {/* TODO: add LinkedIn link here when ready */}
         </p>
-      </div>
+      </ClosingCta>
     </div>
   );
 }
