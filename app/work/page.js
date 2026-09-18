@@ -1,4 +1,5 @@
 import Link from "next/link";
+import PageHeader from "@/components/PageHeader";
 import ProjectCard from "@/components/ProjectCard";
 
 export const metadata = { title: "Work · Samuel Ngobi" };
