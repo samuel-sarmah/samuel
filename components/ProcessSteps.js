@@ -20,7 +20,7 @@ export default function ProcessSteps() {
     <ol className="space-y-8">
       {PROCESS.map((step) => (
         <li key={step.title}>
-          <h3 className="text-[16px] font-medium">{step.title}</h3>
+          <h3 className="item-title">{step.title}</h3>
           <p className="mt-1.5 max-w-[56ch] text-[15.5px] text-[var(--muted)]">
             {step.body}
           </p>

@@ -88,7 +88,7 @@ export default function About() {
           {EXPERIENCE.map((job) => (
             <div key={`${job.role}-${job.company}`}>
               <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
-                <h3 className="text-[17px] font-semibold tracking-tight">
+                <h3 className="item-title">
                   {job.role}
                   <span className="font-normal text-[var(--muted)]"> · </span>
                   {job.link ? (
@@ -128,7 +128,7 @@ export default function About() {
       </Section>
 
       <Section title="Education">
-        <h3 className="text-[17px] font-semibold tracking-tight">
+        <h3 className="item-title">
           Information Security Studies
         </h3>
         <p className="mt-1 text-[15.5px] text-[var(--muted)]">

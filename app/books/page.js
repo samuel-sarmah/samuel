@@ -44,7 +44,7 @@ export default function Books() {
                     <BookCover slug={b.slug} title={b.title} />
                   </a>
                   <div className="min-w-0 flex-1">
-                    <h3 className="text-[17px] font-semibold leading-snug">
+                    <h3 className="item-title">
                       <a href={b.url} target="_blank" rel="noreferrer" className="hover:opacity-70">
                         {b.title}
                       </a>
