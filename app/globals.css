@@ -57,6 +57,12 @@
     background: var(--fg);
     color: var(--bg);
   }
+
+  /* One keyboard-focus treatment for every link, button and field. */
+  :focus-visible {
+    outline: 2px solid var(--fg);
+    outline-offset: 3px;
+  }
 }
 
 /* Display serif, used for page and section headlines only. */
