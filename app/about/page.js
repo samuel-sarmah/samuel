@@ -1,5 +1,6 @@
 import Link from "next/link";
 import PageHeader from "@/components/PageHeader";
+import Section from "@/components/Section";
 import { SOCIALS } from "@/lib/nav";
 
 export const metadata = { title: "About · Samuel Ngobi" };
@@ -82,9 +83,8 @@ export default function About() {
         </p>
       </div>
 
-      <div className="mt-14">
-        <h2 className="section-label">Experience</h2>
-        <div className="mt-6 space-y-10">
+      <Section title="Experience">
+        <div className="space-y-10">
           {EXPERIENCE.map((job) => (
             <div key={`${job.role}-${job.company}`}>
               <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
@@ -125,19 +125,16 @@ export default function About() {
             </div>
           ))}
         </div>
-      </div>
+      </Section>
 
-      <div className="mt-14">
-        <h2 className="section-label">Education</h2>
-        <div className="mt-6">
-          <h3 className="text-[17px] font-semibold tracking-tight">
-            Information Security Studies
-          </h3>
-          <p className="mt-1 text-[15.5px] text-[var(--muted)]">
-            European University of Lefke, Cyprus
-          </p>
-        </div>
-      </div>
+      <Section title="Education">
+        <h3 className="text-[17px] font-semibold tracking-tight">
+          Information Security Studies
+        </h3>
+        <p className="mt-1 text-[15.5px] text-[var(--muted)]">
+          European University of Lefke, Cyprus
+        </p>
+      </Section>
 
       <div className="mt-14">
         <p className="section-label">Get in touch</p>
