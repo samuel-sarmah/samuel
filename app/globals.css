@@ -134,6 +134,15 @@
   color: var(--fg);
 }
 
+/* Item title: the heading of one entry inside a section (a job, a book, a
+   process step). Sits one step below .section-label. */
+.item-title {
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.35;
+}
+
 /* Availability pill with a live pulsing dot */
 .status-dot {
   position: relative;
