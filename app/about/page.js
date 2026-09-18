@@ -143,7 +143,7 @@ export default function About() {
         <p className="mt-4">
           <Link
             href="/contact"
-            className="inline-block bg-[var(--fg)] px-6 py-2.5 text-[15px] font-medium text-[var(--bg)] transition-opacity hover:opacity-85"
+            className="btn"
           >
             Contact me →
           </Link>
