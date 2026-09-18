@@ -1,4 +1,5 @@
 import Link from "next/link";
+import PageHeader from "@/components/PageHeader";
 import { SOCIALS } from "@/lib/nav";
 
 export const metadata = { title: "About · Samuel Ngobi" };
@@ -62,7 +63,7 @@ const EXPERIENCE = [
 export default function About() {
   return (
     <div>
-      <h1 className="display text-[clamp(2.2rem,5.5vw,3rem)]">About</h1>
+      <PageHeader title="About" />
       <div className="mt-5 space-y-4 text-[17px]">
         <p>
           I'm Samuel Ngobi, a web developer with 2+ years of experience. I work mainly with Next.js, React, Rails, and Tailwind CSS.
