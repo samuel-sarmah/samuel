@@ -1,5 +1,7 @@
 import ContactForm from "@/components/ContactForm";
 import PageHeader from "@/components/PageHeader";
+import ProcessSteps from "@/components/ProcessSteps";
+import Section from "@/components/Section";
 import { EMAIL } from "@/lib/nav";
 
 export const metadata = { title: "Contact · Samuel Ngobi" };
@@ -22,6 +24,10 @@ export default function Contact() {
           {EMAIL}
         </a>
       </p>
+
+      <Section title="What happens next">
+        <ProcessSteps />
+      </Section>
     </div>
   );
 }
