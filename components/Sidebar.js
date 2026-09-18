@@ -55,7 +55,7 @@ export default function Sidebar() {
             rel="noreferrer"
             className="transition-colors hover:text-[var(--fg)]"
           >
-            {s.label} 
+            {s.label} ↗
           </a>
         ))}
       </div>
