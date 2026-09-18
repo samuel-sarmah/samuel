@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import ClosingCta from "@/components/ClosingCta";
 import ProjectCard from "@/components/ProjectCard";
 import Section from "@/components/Section";
 import { TechGrid } from "@/components/TechIcon";
@@ -134,25 +135,7 @@ export default function Home() {
         </ol>
       </Section>
 
-      {/* Closing CTA */}
-      <section className="mt-24">
-        <h2 className="display text-[clamp(1.9rem,4.5vw,2.4rem)]">
-          Need a website shipped?
-        </h2>
-        <p className="mt-4 max-w-[48ch] text-[16px] text-[var(--muted)]">
-          Tell me what's blocking you: a build that stalled, a site
-          that's slow, or an idea that needs to go live. I read every
-          message and reply within 4 hours.
-        </p>
-        <p className="mt-6">
-          <Link
-            href="/contact"
-            className="btn"
-          >
-            Let's chat
-          </Link>
-        </p>
-      </section>
+      <ClosingCta />
     </div>
   );
 }
