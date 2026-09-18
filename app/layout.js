@@ -3,7 +3,6 @@ import "./globals.css";
 import Link from "next/link";
 import Sidebar from "@/components/Sidebar";
 import MobileHeader from "@/components/MobileHeader";
-import CookieBanner from "@/components/CookieBanner";
 
 /* Editorial pairing: a high-contrast serif carries the headlines, a clean
    grotesk carries everything you actually have to read. Both self-hosted at
@@ -68,7 +67,6 @@ export default function RootLayout({ children }) {
             Privacy
           </Link>
         </footer>
-        <CookieBanner />
       </body>
     </html>
   );
