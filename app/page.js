@@ -4,6 +4,7 @@ import ClosingCta from "@/components/ClosingCta";
 import ProjectCard from "@/components/ProjectCard";
 import Section from "@/components/Section";
 import { TechGrid } from "@/components/TechIcon";
+import { FEATURED } from "@/lib/projects";
 
 const STACK = [
   {
@@ -24,36 +25,6 @@ const STACK = [
       "Sanity",
       "Vercel",
     ],
-  },
-];
-
-const FEATURED = [
-   {
-    name: "Fruitland Cyprus",
-    tagline: "client work · citrus farm",
-    description:
-      "Marketing site for a family citrus farm in Cyprus. The owners needed a fast site they could update. In the first month of launch, orders increased by 57% doubling the profits. I owned the whole build, from design through Sanity CMS setup to deployment, so they edit products and content themselves.",
-    live: "https://fruitlandcyprus.com",
-    preview: "/previews/fruitland.webp",
-    stack: ["Next.js", "Tailwind CSS", "Sanity", "Vercel"],
-  },
-  {
-    name: "Sterz",
-    tagline: "creator marketplace",
-    description:
-      "A two-sided marketplace where brands fund campaigns into escrow and creators get paid as verified views land, view counts checked against each platform's API. Owned building of auth, marketplace flows, and payouts.",
-    live: "https://ster-seven.vercel.app",
-    preview: "/previews/sterz.webp",
-    stack: ["Next.js", "Supabase", "Vercel"],
-  },
-  {
-    name: "LaunchTracker",
-    tagline: "live mission dashboard",
-    description:
-      "A real-time dashboard for rocket launches: live countdowns, go/no-go status, a watchlist, and space-industry news, all updating without a page refresh. During artemis 2 season, this site served 3000+ users with realtime streaming links and updates through the news channels. ",
-    live: "https://launch-status.vercel.app",
-    preview: "/previews/launch-status.webp",
-    stack: ["Next.js", "Vercel"],
   },
 ];
 
