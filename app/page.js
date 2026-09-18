@@ -42,11 +42,11 @@ export default function Home() {
           fill
           priority
           sizes="(max-width: 768px) 100vw, 736px"
-          className="object-cover "
+          className="object-cover"
         />
         <div aria-hidden="true" className="absolute inset-0 bg-black/55" />
-        <div className="relative px-6 py-20 text-white sm:px-9 sm:py-28">         
-          <h1 className="mt-6 max-w-[46ch] text-[20px] font-normal text-white/90">
+        <div className="relative px-6 py-20 text-white sm:px-9 sm:py-28">
+          <h1 className="max-w-[46ch] text-[20px] font-normal text-white/90">
             I'm Samuel Ngobi(Sarmah), a fullstack web developer driven by the challenge of turning complex requirements
             into clean, intuitive digital experiences.
           </h1>
