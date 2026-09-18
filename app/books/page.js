@@ -1,4 +1,5 @@
 import BookCover from "@/components/BookCover";
+import ClosingCta from "@/components/ClosingCta";
 import PageHeader from "@/components/PageHeader";
 import { BOOK_GROUPS } from "@/lib/books";
 
@@ -61,6 +62,12 @@ export default function Books() {
           </section>
         ))}
       </div>
+
+      <ClosingCta
+        title="Building something?"
+        body="Reading is how I think; shipping is what I do. If you have a project that needs a developer, tell me about it and I'll reply within 4 hours."
+        cta="Start a project"
+      />
     </div>
   );
 }
