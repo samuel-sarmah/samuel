@@ -1,5 +1,4 @@
 import PageHeader from "@/components/PageHeader";
-import { EMAIL } from "@/lib/nav";
 
 export const metadata = { title: "Privacy · Samuel Ngobi" };
 
@@ -23,8 +22,8 @@ export default function Privacy() {
           never leaves your device.
         </p>
         <p>
-          If you'd like a message you sent deleted, email{" "}
-          <a href={`mailto:${EMAIL}`} className="link">{EMAIL}</a> and I'll take care of it.
+          If you'd like a message you sent deleted, ask through the{" "}
+          <a href="/contact" className="link">contact form</a> and I'll take care of it.
         </p>
       </div>
     </div>
