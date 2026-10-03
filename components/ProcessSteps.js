@@ -1,5 +1,3 @@
-/* The three-step way a project runs, shown on the homepage and again on the
-   contact page so people know what happens after they hit send. */
 export const PROCESS = [
   {
     title: "Scope",
