@@ -1,6 +1,3 @@
-/* Every inner page opens the same way: a display-serif title and, when the
-   page needs one, a short muted intro measured to the homepage's copy width.
-   `intro` accepts nodes so it can carry inline links. */
 export default function PageHeader({ title, intro, children }) {
   return (
     <header>

@@ -69,7 +69,6 @@ export function TechIcon({ name, size = 16 }) {
   );
 }
 
-/* A row of labelled tech chips, e.g. under a project. */
 export function TechRow({ items, size = 15 }) {
   return (
     <ul className="flex flex-wrap gap-x-4 gap-y-2">
@@ -86,7 +85,6 @@ export function TechRow({ items, size = 15 }) {
   );
 }
 
-/* The stack grid: logos at a size where the marks actually read. */
 export function TechGrid({ groups }) {
   return (
     <div className="space-y-9">

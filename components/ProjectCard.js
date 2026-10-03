@@ -12,8 +12,6 @@ function BrowserFrame({ src, alt, domain, href }) {
           <i className="h-2.5 w-2.5 rounded-full bg-[#febc2e]" />
           <i className="h-2.5 w-2.5 rounded-full bg-[#28c840]" />
         </span>
-        {/* No address pill for a project that isn't deployed yet: an empty
-            URL bar reads as broken, where bare chrome just reads as a window. */}
         {domain && (
           <span className="mx-auto flex max-w-[70%] items-center gap-1.5 bg-[var(--bg)] px-3 py-0.5 text-[11px] tracking-wide text-[var(--muted)]">
             <svg viewBox="0 0 24 24" width="9" height="9" fill="currentColor" aria-hidden="true">

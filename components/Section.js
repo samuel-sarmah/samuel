@@ -1,8 +1,5 @@
 import Link from "next/link";
 
-/* A page section as the homepage lays them out: generous top margin, a bold
-   section label, an optional right-aligned action link, and the content
-   below. Sections are separated by whitespace rather than rules. */
 export default function Section({ title, action, children, className = "" }) {
   return (
     <section className={`mt-24 ${className}`.trim()}>

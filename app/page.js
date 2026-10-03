@@ -32,9 +32,6 @@ const STACK = [
 export default function Home() {
   return (
     <div>
-      {/* Hero — the full artwork shows edge to edge behind a uniform dark
-          scrim, with light text on top so both sides of the piece stay
-          visible in either theme. */}
       <section className="relative overflow-hidden border border-[var(--line)]">
         <Image
           src="/hero.webp"
