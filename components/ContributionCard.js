@@ -1,5 +1,5 @@
 import { BrowserFrame } from "@/components/ProjectCard";
-import { formatMerged, formatStars, prUrl } from "@/lib/contributions";
+import { formatStars, prUrl } from "@/lib/contributions";
 
 export function Stars({ count }) {
   return (
@@ -26,17 +26,14 @@ export function PrList({ repo, prs }) {
           <a href={prUrl(repo, pr.number)} target="_blank" rel="noreferrer" className="link">
             {pr.title} ↗
           </a>
-          <span className="ml-auto shrink-0 text-[13px] text-[var(--muted)]">
-            {formatMerged(pr.merged)}
-          </span>
         </li>
       ))}
     </ul>
   );
 }
 
-export default function ContributionCard({ contribution, headingLevel = 3 }) {
-  const { name, repo, stars, summary, live, preview, prs } = contribution;
+export default function ContributionCard({ contribution, headingLevel = 3, compact = false }) {
+  const { name, repo, stars, description, live, preview, prs } = contribution;
   const Heading = headingLevel === 2 ? "h2" : "h3";
 
   return (
@@ -65,9 +62,15 @@ export default function ContributionCard({ contribution, headingLevel = 3 }) {
             Repository ↗
           </a>
         </div>
-        <p className="mt-2 max-w-[60ch] text-[15.5px] text-[var(--muted)]">{summary}</p>
-        <div className="mt-4 border-t border-[var(--line)] pt-4">
-          <p className="eyebrow mb-2.5">Merged {prs.length === 1 ? "PR" : "PRs"}</p>
+        <p
+          className={
+            "mt-2 max-w-[60ch] text-[15.5px] text-[var(--muted)]" +
+            (compact ? " line-clamp-3 sm:min-h-[4.95em]" : "")
+          }
+        >
+          {description}
+        </p>
+        <div className="mt-4">
           <PrList repo={repo} prs={prs} />
         </div>
       </div>

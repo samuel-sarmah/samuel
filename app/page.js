@@ -6,7 +6,7 @@ import ProcessSteps from "@/components/ProcessSteps";
 import ProjectCard from "@/components/ProjectCard";
 import Section from "@/components/Section";
 import { TechGrid } from "@/components/TechIcon";
-import { HIGHLIGHTS, withStars } from "@/lib/contributions";
+import { HIGHLIGHTS, withRepoInfo } from "@/lib/contributions";
 import { FEATURED } from "@/lib/projects";
 
 const STACK = [
@@ -32,7 +32,7 @@ const STACK = [
 ];
 
 export default async function Home() {
-  const highlights = await withStars(HIGHLIGHTS);
+  const highlights = await withRepoInfo(HIGHLIGHTS);
 
   return (
     <div>
@@ -75,7 +75,7 @@ export default async function Home() {
       <Section title="Open source" action={{ href: "/open-source", label: "All contributions" }}>
         <div className="grid gap-x-8 gap-y-14 sm:grid-cols-2">
           {highlights.map((c) => (
-            <ContributionCard key={c.repo} contribution={c} />
+            <ContributionCard key={c.repo} contribution={c} compact />
           ))}
         </div>
       </Section>

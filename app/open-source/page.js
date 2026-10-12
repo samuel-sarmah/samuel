@@ -2,12 +2,12 @@ import ClosingCta from "@/components/ClosingCta";
 import ContributionCard, { PrList, Stars } from "@/components/ContributionCard";
 import PageHeader from "@/components/PageHeader";
 import Section from "@/components/Section";
-import { CREED, HIGHLIGHTS, OTHERS, withStars } from "@/lib/contributions";
+import { CREED, HIGHLIGHTS, OTHERS, withRepoInfo } from "@/lib/contributions";
 
 export const metadata = { title: "Open source · Samuel Ngobi" };
 
 export default async function OpenSource() {
-  const [highlights, others] = await Promise.all([withStars(HIGHLIGHTS), withStars(OTHERS)]);
+  const [highlights, others] = await Promise.all([withRepoInfo(HIGHLIGHTS), withRepoInfo(OTHERS)]);
 
   return (
     <div>
@@ -41,9 +41,9 @@ export default async function OpenSource() {
       </Section>
 
       <Section title="More contributions">
-        <ul className="divide-y divide-[var(--line)] border-y border-[var(--line)]">
+        <ul className="space-y-10">
           {others.map((c) => (
-            <li key={c.repo} className="py-6">
+            <li key={c.repo}>
               <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
                 <h3 className="item-title">
                   <a
@@ -57,8 +57,7 @@ export default async function OpenSource() {
                 </h3>
                 <Stars count={c.stars} />
               </div>
-              <p className="text-[14px] text-[var(--muted)]">{c.about}</p>
-              <p className="mt-2 max-w-[60ch] text-[15px] text-[var(--muted)]">{c.summary}</p>
+              <p className="mt-1 max-w-[60ch] text-[15px] text-[var(--muted)]">{c.description}</p>
               <div className="mt-3">
                 <PrList repo={c.repo} prs={c.prs} />
               </div>
