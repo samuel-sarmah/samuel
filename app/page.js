@@ -1,10 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import ClosingCta from "@/components/ClosingCta";
+import ContributionCard from "@/components/ContributionCard";
 import ProcessSteps from "@/components/ProcessSteps";
 import ProjectCard from "@/components/ProjectCard";
 import Section from "@/components/Section";
 import { TechGrid } from "@/components/TechIcon";
+import { HIGHLIGHTS, withStars } from "@/lib/contributions";
 import { FEATURED } from "@/lib/projects";
 
 const STACK = [
@@ -29,7 +31,9 @@ const STACK = [
   },
 ];
 
-export default function Home() {
+export default async function Home() {
+  const highlights = await withStars(HIGHLIGHTS);
+
   return (
     <div>
       <section className="relative overflow-hidden border border-[var(--line)]">
@@ -66,6 +70,14 @@ export default function Home() {
 
       <Section title="Tech stack">
         <TechGrid groups={STACK} />
+      </Section>
+
+      <Section title="Open source" action={{ href: "/open-source", label: "All contributions" }}>
+        <div className="grid gap-x-8 gap-y-14 sm:grid-cols-2">
+          {highlights.map((c) => (
+            <ContributionCard key={c.repo} contribution={c} />
+          ))}
+        </div>
       </Section>
 
       <Section title="Selected work" action={{ href: "/work", label: "All projects" }}>
