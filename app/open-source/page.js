@@ -20,16 +20,9 @@ export default async function OpenSource() {
         <h2 id="creed" className="eyebrow">
           The open source creed
         </h2>
-        <ol className="mt-6 space-y-3.5">
-          {CREED.map((line, i) => (
-            <li key={line} className="flex items-baseline gap-4">
-              <span className="w-5 shrink-0 font-mono text-[12.5px] text-[var(--muted)]">
-                {String(i + 1).padStart(2, "0")}
-              </span>
-              <span className="display text-[clamp(1.25rem,3vw,1.5rem)]">{line}</span>
-            </li>
-          ))}
-        </ol>
+        <blockquote className="mt-5">
+          <p className="display text-[clamp(1.6rem,4vw,2.1rem)]">&ldquo;{CREED}&rdquo;</p>
+        </blockquote>
       </section>
 
       <Section title="Highlights">
