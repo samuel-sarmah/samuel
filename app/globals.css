@@ -14,6 +14,7 @@
   --chrome: #eee2d6;
   --ok: #16a34a;
   --danger: #c2321f;
+  --merged: #8250df;
 }
 
 :root[data-theme="dark"] {
@@ -27,6 +28,7 @@
   --chrome: #222428;
   --ok: #22c55e;
   --danger: #f87171;
+  --merged: #a371f7;
 }
 
 /* Base element styles live in @layer base so Tailwind utility classes

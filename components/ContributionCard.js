@@ -19,12 +19,20 @@ export function PrList({ repo, prs }) {
   return (
     <ul className="space-y-1.5">
       {prs.map((pr) => (
-        <li key={pr.number} className="flex items-baseline gap-2.5 text-[14.5px]">
-          <span className="shrink-0 font-mono text-[12.5px] text-[var(--muted)]">
-            #{pr.number}
-          </span>
+        <li key={pr.number} className="flex items-baseline gap-2 text-[14.5px]">
+          <svg
+            viewBox="0 0 16 16"
+            width="14"
+            height="14"
+            fill="var(--merged)"
+            role="img"
+            aria-label="Merged"
+            className="shrink-0 translate-y-[2px]"
+          >
+            <path d="M5.45 5.154A4.25 4.25 0 0 0 9.25 7.5h1.378a2.251 2.251 0 1 1 0 1.5H9.25A5.734 5.734 0 0 1 5 7.123v3.505a2.25 2.25 0 1 1-1.5 0V5.372a2.25 2.25 0 1 1 1.95-.218ZM4.25 13.5a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm8.5-4.5a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5ZM5 3.25a.75.75 0 1 0 0 .005V3.25Z" />
+          </svg>
           <a href={prUrl(repo, pr.number)} target="_blank" rel="noreferrer" className="link">
-            {pr.title} ↗
+            {pr.title}&nbsp;↗
           </a>
         </li>
       ))}
