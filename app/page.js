@@ -84,7 +84,7 @@ export default async function Home() {
         </div>
       </Section>
 
-      <Section title="How we work">
+      <Section title="How I work">
         <ProcessSteps />
       </Section>
 
