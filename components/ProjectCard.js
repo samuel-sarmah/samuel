@@ -3,7 +3,7 @@ import { TechRow } from "@/components/TechIcon";
 
 /* Browser-chrome frame around a live screenshot so previews read as real,
    running products rather than mockups. */
-function BrowserFrame({ src, alt, domain, href }) {
+export function BrowserFrame({ src, alt, domain, href }) {
   const frame = (
     <figure className="overflow-hidden border border-[var(--line)] bg-[var(--card)] shadow-[0_1px_2px_rgba(0,0,0,0.04),0_12px_32px_-16px_rgba(0,0,0,0.18)]">
       <div className="flex items-center gap-2 border-b border-[var(--line)] bg-[var(--chrome)] px-3.5 py-2">

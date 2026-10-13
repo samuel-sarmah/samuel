@@ -14,6 +14,7 @@
   --chrome: #eee2d6;
   --ok: #16a34a;
   --danger: #c2321f;
+  --merged: #8250df;
 }
 
 :root[data-theme="dark"] {
@@ -27,6 +28,7 @@
   --chrome: #222428;
   --ok: #22c55e;
   --danger: #f87171;
+  --merged: #a371f7;
 }
 
 /* Base element styles live in @layer base so Tailwind utility classes
@@ -227,3 +229,14 @@ main {
 .prose pre code { background: none; padding: 0; }
 .prose img { margin: 1.25rem 0; max-width: 100%; }
 .prose hr { border: none; border-top: 1px solid var(--line); margin: 2rem 0; }
+
+.fade-in {
+  animation: fade-in 0.5s ease both;
+}
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .fade-in { animation: none; }
+}
