@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import ClosingCta from "@/components/ClosingCta";
-import ContributionCard from "@/components/ContributionCard";
+import ContributionOrbit from "@/components/ContributionOrbit";
 import ProcessSteps from "@/components/ProcessSteps";
 import ProjectCard from "@/components/ProjectCard";
 import Section from "@/components/Section";
@@ -73,11 +73,7 @@ export default async function Home() {
       </Section>
 
       <Section title="Open source" action={{ href: "/open-source", label: "All contributions" }}>
-        <div className="grid gap-x-8 gap-y-14 sm:grid-cols-2">
-          {highlights.map((c) => (
-            <ContributionCard key={c.repo} contribution={c} compact />
-          ))}
-        </div>
+        <ContributionOrbit contributions={highlights} />
       </Section>
 
       <Section title="Selected work" action={{ href: "/work", label: "All projects" }}>

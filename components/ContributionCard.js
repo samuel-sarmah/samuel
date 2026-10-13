@@ -40,7 +40,7 @@ export function PrList({ repo, prs }) {
   );
 }
 
-export default function ContributionCard({ contribution, headingLevel = 3, compact = false }) {
+export default function ContributionCard({ contribution, headingLevel = 3 }) {
   const { name, repo, stars, description, live, preview, prs } = contribution;
   const Heading = headingLevel === 2 ? "h2" : "h3";
 
@@ -70,12 +70,7 @@ export default function ContributionCard({ contribution, headingLevel = 3, compa
             Repository ↗
           </a>
         </div>
-        <p
-          className={
-            "mt-2 max-w-[60ch] text-[15.5px] text-[var(--muted)]" +
-            (compact ? " line-clamp-3 sm:min-h-[4.95em]" : "")
-          }
-        >
+        <p className="mt-2 max-w-[60ch] text-[15.5px] text-[var(--muted)]">
           {description}
         </p>
         <div className="mt-4">
