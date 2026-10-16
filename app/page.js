@@ -3,7 +3,7 @@ import Link from "next/link";
 import ClosingCta from "@/components/ClosingCta";
 import ContributionOrbit from "@/components/ContributionOrbit";
 import ProcessSteps from "@/components/ProcessSteps";
-import ProjectCard from "@/components/ProjectCard";
+import { CompactProjectCard } from "@/components/ProjectCard";
 import Section from "@/components/Section";
 import { TechGrid } from "@/components/TechIcon";
 import { HIGHLIGHTS, withRepoInfo } from "@/lib/contributions";
@@ -77,9 +77,9 @@ export default async function Home() {
       </Section>
 
       <Section title="Selected work" action={{ href: "/work", label: "All projects" }}>
-        <div className="space-y-16">
+        <div className="grid gap-4 xl:grid-cols-3">
           {FEATURED.map((p) => (
-            <ProjectCard key={p.name} project={p} />
+            <CompactProjectCard key={p.name} project={p} />
           ))}
         </div>
       </Section>
