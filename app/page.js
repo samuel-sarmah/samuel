@@ -42,7 +42,7 @@ export default async function Home() {
           alt=""
           fill
           priority
-          sizes="(max-width: 768px) 100vw, 736px"
+          sizes="(max-width: 768px) 100vw, 928px"
           className="object-cover"
         />
         <div aria-hidden="true" className="absolute inset-0 bg-black/55" />

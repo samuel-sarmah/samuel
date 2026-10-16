@@ -27,7 +27,7 @@ export function BrowserFrame({ src, alt, domain, href }) {
         width={1200}
         height={750}
         className="block w-full"
-        sizes="(max-width: 768px) 100vw, 736px"
+        sizes="(max-width: 768px) 100vw, 928px"
       />
     </figure>
   );
