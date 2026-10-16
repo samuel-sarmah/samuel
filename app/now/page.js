@@ -17,7 +17,7 @@ export default function Now() {
 
       <ClosingCta
         title="Have something for me?"
-        body="I'm taking on new freelance work and open to full-time roles. If your project fits, tell me about it and I'll reply within 4 hours."
+        body="I'm taking on new freelance work and open to full-time roles. If your project fits, tell me about it and I'll reply within 8 hours."
         cta="Get in touch"
       />
     </div>

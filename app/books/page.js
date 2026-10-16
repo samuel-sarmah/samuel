@@ -65,7 +65,7 @@ export default function Books() {
 
       <ClosingCta
         title="Building something?"
-        body="Reading is how I think; shipping is what I do. If you have a project that needs a developer, tell me about it and I'll reply within 4 hours."
+        body="Reading is how I think; shipping is what I do. If you have a project that needs a developer, tell me about it and I'll reply within 8 hours."
         cta="Start a project"
       />
     </div>

@@ -79,7 +79,7 @@ export default function About() {
           I'm currently available for freelance projects and open to
           full-time roles. If you have a project in mind, or a site that
           isn't pulling its weight, tell me about it and I'll reply
-          within 4 hours.
+          within 8 hours.
         </p>
       </div>
 
@@ -138,7 +138,7 @@ export default function About() {
 
       <ClosingCta
         title="Let's work together"
-        body="I'm available for freelance projects and open to full-time roles. Tell me about yours and I'll reply within 4 hours."
+        body="I'm available for freelance projects and open to full-time roles. Tell me about yours and I'll reply within 8 hours."
         cta="Contact me"
       >
         <p className="mt-5 text-[14px] text-[var(--muted)]">

@@ -20,7 +20,7 @@ export default function Work() {
 
       <ClosingCta
         title="Need something like this?"
-        body="Every project above started as a short message. Tell me what you need shipped, and I'll reply within 4 hours with how I'd approach it."
+        body="Every project above started as a short message. Tell me what you need shipped, and I'll reply within 8 hours with how I'd approach it."
         cta="Tell me what you need"
       />
     </div>
