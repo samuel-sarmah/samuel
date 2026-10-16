@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function ClosingCta({
   title = "Need a website shipped?",
-  body = "Tell me what's blocking you: a build that stalled, a site that's slow, or an idea that needs to go live. I read every message and reply within 4 hours.",
+  body = "Tell me what's blocking you: a build that stalled, a site that's slow, or an idea that needs to go live. I read every message and reply within 8 hours.",
   cta = "Let's chat",
   href = "/contact",
   children,

@@ -57,9 +57,9 @@ export default function RootLayout({ children }) {
       </head>
       <body className="antialiased">
         <MobileHeader />
-        <div className="mx-auto flex min-h-screen max-w-[61.6rem] flex-col gap-10 px-5 py-10 sm:px-8 md:flex-row md:gap-14 md:py-14">
+        <div className="mx-auto flex min-h-screen max-w-[73.6rem] flex-col gap-10 px-5 py-10 sm:px-8 md:flex-row md:gap-14 md:py-14">
           <Sidebar />
-          <main className="min-w-0 flex-1 md:max-w-[46rem]">{children}</main>
+          <main className="min-w-0 flex-1 md:max-w-[58rem]">{children}</main>
         </div>
         <footer className="flex items-center gap-3 px-5 pb-10 text-[13px] text-[var(--muted)] sm:px-8 md:hidden">
           <span>© {new Date().getFullYear()} Samuel Ngobi</span>

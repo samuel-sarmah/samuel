@@ -3,13 +3,13 @@ import ClosingCta from "@/components/ClosingCta";
 import PageHeader from "@/components/PageHeader";
 import { BOOK_GROUPS } from "@/lib/books";
 
-export const metadata = { title: "Books · Samuel Ngobi" };
+export const metadata = { title: "My reading list · Samuel Ngobi" };
 
 export default function Books() {
   return (
     <div>
       <PageHeader
-        title="Books"
+        title="My reading list"
         intro={
           <>
             My reading list is a mix of software and thinking clearly and making better
@@ -65,7 +65,7 @@ export default function Books() {
 
       <ClosingCta
         title="Building something?"
-        body="Reading is how I think; shipping is what I do. If you have a project that needs a developer, tell me about it and I'll reply within 4 hours."
+        body="Reading is how I think; shipping is what I do. If you have a project that needs a developer, tell me about it and I'll reply within 8 hours."
         cta="Start a project"
       />
     </div>

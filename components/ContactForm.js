@@ -30,7 +30,7 @@ export default function ContactForm() {
     <>
       {flash && (
         <p className="flash" role="status" aria-live="polite">
-          Message sent, I&apos;ll reply within 4 hours.
+          Message sent, I&apos;ll reply within 8 hours.
         </p>
       )}
 
