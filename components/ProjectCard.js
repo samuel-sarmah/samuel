@@ -90,7 +90,7 @@ export default function ProjectCard({ project, headingLevel = 3 }) {
 }
 
 export function CompactProjectCard({ project }) {
-  const { name, tagline, summary, description, stack, live, code, preview } = project;
+  const { name, tagline, stack, live, code, preview } = project;
   const href = live ?? code;
 
   return (
@@ -114,7 +114,6 @@ export function CompactProjectCard({ project }) {
       <div className="p-4">
         {tagline && <p className="eyebrow text-[11px]">{tagline}</p>}
         <h3 className="mt-1 text-[16px] font-semibold leading-tight tracking-tight">{name}</h3>
-        <p className="mt-1.5 text-[13.5px] leading-snug text-[var(--muted)]">{summary ?? description}</p>
         {stack && (
           <div className="mt-3">
             <TechRow items={stack} size={13} />
