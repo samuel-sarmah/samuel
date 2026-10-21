@@ -91,29 +91,27 @@ export default function ProjectCard({ project, headingLevel = 3 }) {
 
 export function CompactProjectCard({ project }) {
   const { name, tagline, summary, description, stack, live, code, preview } = project;
-  const domain = live ? new URL(live).hostname : null;
   const href = live ?? code;
 
   return (
-    <article className="flex flex-col border border-[var(--line)] bg-[var(--card)] sm:flex-row xl:flex-col">
+    <a
+      href={href}
+      target="_blank"
+      rel="noreferrer"
+      className="group flex flex-col border border-[var(--line)] bg-[var(--card)] transition-colors hover:border-[var(--muted)] sm:flex-row xl:flex-col"
+    >
       {preview && (
-        <a
-          href={href}
-          target="_blank"
-          rel="noreferrer"
-          aria-label={`Open ${domain ?? name}`}
-          className="relative block aspect-[3/2] overflow-hidden border-b border-[var(--line)] sm:aspect-auto sm:min-h-[200px] sm:w-[42%] sm:shrink-0 sm:border-b-0 sm:border-r xl:aspect-[3/2] xl:min-h-0 xl:w-auto xl:border-r-0 xl:border-b"
-        >
+        <div className="relative aspect-[3/2] overflow-hidden border-b border-[var(--line)] sm:aspect-auto sm:min-h-[200px] sm:w-[42%] sm:shrink-0 sm:border-b-0 sm:border-r xl:aspect-[3/2] xl:min-h-0 xl:w-auto xl:border-r-0 xl:border-b">
           <Image
             src={preview}
             alt={`Screenshot of ${name}`}
             fill
             sizes="(max-width: 640px) 100vw, (max-width: 1280px) 42vw, 310px"
-            className="object-cover object-top transition-transform duration-300 hover:scale-[1.03] sm:object-left-top xl:object-top"
+            className="object-cover object-top transition-transform duration-300 group-hover:scale-[1.03] sm:object-left-top xl:object-top"
           />
-        </a>
+        </div>
       )}
-      <div className="flex flex-1 flex-col p-4">
+      <div className="p-4">
         {tagline && <p className="eyebrow text-[11px]">{tagline}</p>}
         <h3 className="mt-1 text-[16px] font-semibold leading-tight tracking-tight">{name}</h3>
         <p className="mt-1.5 text-[13.5px] leading-snug text-[var(--muted)]">{summary ?? description}</p>
@@ -122,19 +120,7 @@ export function CompactProjectCard({ project }) {
             <TechRow items={stack} size={13} />
           </div>
         )}
-        <span className="mt-auto flex gap-4 pt-4 text-[13.5px] font-medium">
-          {live && (
-            <a href={live} target="_blank" rel="noreferrer" className="link">
-              Live site ↗
-            </a>
-          )}
-          {code && (
-            <a href={code} target="_blank" rel="noreferrer" className="link">
-              Source ↗
-            </a>
-          )}
-        </span>
       </div>
-    </article>
+    </a>
   );
 }
